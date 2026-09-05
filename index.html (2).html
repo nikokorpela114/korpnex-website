@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Korpnex — Rakennusalan työturvallisuus</title>
+<meta name="description" content="Korpnex auttaa rakennusalan yrityksiä tunnistamaan riskit ja kehittämään työturvallisuutta. Turvallisuuskierrokset, riskien arviointi ja dokumentointi rakennustyömaille.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #060D18;
+    --bg2: #0B1626;
+    --card: #101E31;
+    --navy-deep: #102746;
+    --accent: #0878E8;
+    --accent-bright: #12A8F5;
+    --accent-light: #4BAEFF;
+    --text: #F4F7FA;
+    --text-2: #9BAABD;
+    --border: #1D3048;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{ font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; letter-spacing:-0.01em; line-height:1.1; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+  .wrap{ max-width:1200px; margin:0 auto; padding:0 32px; }
+  @media(max-width:640px){ .wrap{ padding:0 22px; } }
+  ::selection{ background:var(--accent); color:#fff; }
+
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+    *{ animation:none !important; }
+  }
+  :focus-visible{ outline:2px solid var(--accent-light); outline-offset:3px; }
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:22px 0;
+    transition:background .3s ease, padding .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(6,13,24,0.82);
+    backdrop-filter:blur(14px);
+    padding:14px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:11px; }
+  .brand img{ height:28px; width:auto; display:block; }
+  .brand span{ font-size:19px; font-weight:700; letter-spacing:0.02em; }
+  nav.main-nav{ display:flex; align-items:center; gap:38px; }
+  nav.main-nav a:not(.cta){ font-size:14.5px; color:var(--text-2); transition:color .18s ease; }
+  nav.main-nav a:not(.cta):hover{ color:var(--text); }
+  .cta{
+    padding:11px 22px;
+    background:var(--accent);
+    color:#fff !important;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.02em;
+    box-shadow:0 0 0 rgba(18,168,245,0);
+    transition:box-shadow .25s ease, background .25s ease, transform .2s ease;
+  }
+  .cta:hover{ background:var(--accent-bright); box-shadow:0 0 26px rgba(18,168,245,0.45); transform:translateY(-1px); }
+  .burger{ display:none; background:none; border:none; color:var(--text); font-size:24px; cursor:pointer; }
+  .mobile-nav{
+    display:none; position:fixed; inset:0; z-index:99; background:var(--bg);
+    flex-direction:column; align-items:center; justify-content:center; gap:30px;
+  }
+  .mobile-nav.open{ display:flex; }
+  .mobile-nav a{ font-size:22px; font-weight:600; }
+  .mobile-close{ position:absolute; top:26px; right:28px; background:none; border:none; color:var(--text); font-size:28px; }
+
+  @media(max-width:860px){
+    nav.main-nav{ display:none; }
+    .burger{ display:block; }
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:140px 0 100px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 60% 55% at 78% 18%, rgba(8,120,232,0.22), transparent 60%),
+      radial-gradient(ellipse 50% 45% at 15% 85%, rgba(18,168,245,0.10), transparent 60%),
+      var(--bg);
+  }
+  .hero-grid{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse 65% 60% at 70% 30%, black, transparent 75%);
+  }
+  .hero-mark{
+    position:absolute;
+    right:-4%; top:50%; transform:translateY(-50%);
+    width:46%; max-width:560px;
+    opacity:0.9;
+    filter:drop-shadow(0 0 70px rgba(8,120,232,0.35));
+  }
+  .hero-mark svg{ width:100%; height:auto; display:block; }
+  .hero-content{ position:relative; z-index:3; max-width:660px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:13px; font-weight:600; letter-spacing:0.14em;
+    color:var(--accent-light); text-transform:uppercase;
+    margin-bottom:26px;
+  }
+  .eyebrow::before{ content:""; width:22px; height:2px; background:var(--accent); }
+  .hero h1{
+    font-size:clamp(34px, 5vw, 58px);
+    text-transform:uppercase;
+    letter-spacing:-0.01em;
+    margin-bottom:24px;
+  }
+  .hero h1 .glow{
+    background:linear-gradient(100deg, var(--accent), var(--accent-light));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero p.lead{
+    font-size:18px; color:var(--text-2); max-width:52ch; margin-bottom:40px;
+  }
+  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn-primary, .btn-outline{
+    padding:15px 28px; font-size:14.5px; font-weight:600; letter-spacing:0.03em;
+    border-radius:6px; display:inline-flex; align-items:center; gap:8px;
+    text-transform:uppercase;
+  }
+  .btn-primary{ background:var(--accent); color:#fff; transition:box-shadow .25s ease, background .25s ease, transform .2s ease; }
+  .btn-primary:hover{ background:var(--accent-bright); box-shadow:0 0 30px rgba(18,168,245,0.5); transform:translateY(-1px); }
+  .btn-outline{ border:1px solid var(--border); color:var(--text); transition:border-color .2s ease, background .2s ease; }
+  .btn-outline:hover{ border-color:var(--accent); background:rgba(8,120,232,0.08); }
+
+  @media(max-width:900px){
+    .hero-mark{ opacity:0.35; width:70%; right:-10%; }
+  }
+
+  /* ---------- intro strip ---------- */
+  .intro{ padding:110px 0; background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .intro-inner{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start; }
+  .intro h2{ font-size:clamp(26px,3.2vw,38px); text-transform:uppercase; max-width:14ch; }
+  .intro p{ color:var(--text-2); font-size:17px; max-width:56ch; }
+  @media(max-width:820px){ .intro-inner{ grid-template-columns:1fr; gap:24px; } }
+
+  /* ---------- section shared ---------- */
+  section{ position:relative; padding:110px 0; }
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head .tag{ color:var(--accent-light); font-size:13px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; display:block; margin-bottom:16px; }
+  .section-head h2{ font-size:clamp(28px,3.6vw,42px); text-transform:uppercase; }
+
+  /* ---------- palvelut ---------- */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
+    background:var(--border); border:1px solid var(--border);
+  }
+  .service-card{
+    background:var(--card); padding:38px 32px; position:relative;
+    transition:box-shadow .3s ease, background .3s ease;
+  }
+  .service-card:hover{ box-shadow:inset 0 0 0 1px var(--accent), 0 0 40px rgba(8,120,232,0.18); }
+  .service-card .idx{ font-family:'Plus Jakarta Sans',sans-serif; font-size:14px; color:var(--accent-light); letter-spacing:0.08em; display:block; margin-bottom:20px; }
+  .service-card h3{ font-size:19.5px; text-transform:uppercase; margin-bottom:12px; letter-spacing:0; }
+  .service-card p{ color:var(--text-2); font-size:14.5px; margin-bottom:20px; }
+  .service-card .more{ font-size:13.5px; font-weight:600; color:var(--accent-light); letter-spacing:0.02em; }
+  @media(max-width:900px){ .services-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- miksi korpnex ---------- */
+  .why-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:28px; }
+  .why-item{ padding:30px 0; border-top:1px solid var(--border); }
+  .why-item h3{ font-size:17px; text-transform:uppercase; margin-bottom:10px; color:var(--accent-light); }
+  .why-item p{ color:var(--text-2); font-size:14.5px; }
+  @media(max-width:900px){ .why-grid{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:560px){ .why-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- prosessi ---------- */
+  .process-line{ position:relative; }
+  .process-row{
+    display:grid; grid-template-columns:64px 1fr; gap:26px;
+    padding:0 0 44px 0; position:relative;
+  }
+  .process-row::before{
+    content:""; position:absolute; left:31px; top:44px; bottom:-2px; width:1px;
+    background:linear-gradient(var(--accent), var(--border));
+  }
+  .process-row:last-child::before{ display:none; }
+  .step-dot{
+    width:64px; height:64px; border-radius:50%;
+    border:1px solid var(--border); background:var(--card);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Plus Jakarta Sans',sans-serif; font-size:18px; color:var(--accent-light);
+  }
+  .process-row h3{ font-size:19px; text-transform:uppercase; margin-bottom:8px; padding-top:14px; }
+  .process-row p{ color:var(--text-2); font-size:15px; max-width:56ch; }
+
+  /* ---------- luottamus ---------- */
+  .trust-panel{
+    border:1px dashed var(--border); border-radius:10px;
+    padding:60px 40px; text-align:center;
+    background:linear-gradient(180deg, rgba(16,30,49,0.4), transparent);
+  }
+  .trust-panel p.small{ color:var(--text-2); font-size:14.5px; max-width:48ch; margin:0 auto; }
+  .trust-placeholders{ display:flex; justify-content:center; gap:18px; margin-bottom:26px; flex-wrap:wrap; }
+  .trust-slot{
+    width:120px; height:52px; border:1px solid var(--border); border-radius:6px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--text-2); font-size:12px; letter-spacing:0.05em;
+  }
+
+  /* ---------- final cta ---------- */
+  .final-cta{
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 0%, rgba(18,168,245,0.16), transparent 65%),
+      var(--bg2);
+    border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+    text-align:center;
+    padding:120px 0;
+  }
+  .final-cta h2{ font-size:clamp(28px,4.2vw,46px); text-transform:uppercase; max-width:16ch; margin:0 auto 20px; }
+  .final-cta p{ color:var(--text-2); font-size:17px; max-width:52ch; margin:0 auto 40px; }
+
+  /* ---------- yhteystiedot ---------- */
+  .contact-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; }
+  .contact-info h2{ font-size:clamp(26px,3.2vw,36px); text-transform:uppercase; margin-bottom:20px; max-width:14ch; }
+  .contact-info p{ color:var(--text-2); font-size:16px; margin-bottom:30px; max-width:44ch; }
+  .contact-detail{ padding:16px 0; border-top:1px solid var(--border); font-size:15px; }
+  .contact-detail span{ display:block; color:var(--text-2); font-size:12.5px; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px; }
+
+  form.contact-form{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  form.contact-form .full{ grid-column:1 / -1; }
+  form.contact-form label{ display:block; font-size:13px; color:var(--text-2); margin-bottom:7px; text-transform:uppercase; letter-spacing:0.05em; }
+  form.contact-form input, form.contact-form textarea{
+    width:100%; background:var(--card); border:1px solid var(--border); border-radius:6px;
+    padding:13px 14px; color:var(--text); font-family:'Inter',sans-serif; font-size:14.5px;
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  form.contact-form input:focus, form.contact-form textarea:focus{
+    outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(8,120,232,0.18);
+  }
+  form.contact-form textarea{ min-height:110px; resize:vertical; }
+  form.contact-form button{
+    grid-column:1 / -1; margin-top:6px; justify-self:start;
+    padding:15px 30px; background:var(--accent); color:#fff; border:none; border-radius:6px;
+    font-weight:600; font-size:14px; letter-spacing:0.03em; text-transform:uppercase; cursor:pointer;
+    transition:box-shadow .25s ease, background .25s ease;
+  }
+  form.contact-form button:hover{ background:var(--accent-bright); box-shadow:0 0 30px rgba(18,168,245,0.45); }
+  .form-note{ font-size:13px; color:var(--text-2); margin-top:14px; grid-column:1/-1; }
+
+  @media(max-width:820px){
+    .contact-grid{ grid-template-columns:1fr; }
+    form.contact-form{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- footer ---------- */
+  footer{ padding:50px 0 40px; border-top:1px solid var(--border); }
+  .footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+  .footer-brand{ display:flex; align-items:center; gap:10px; }
+  .footer-brand img{ height:22px; opacity:0.8; }
+  .footer-brand span{ font-size:14px; color:var(--text-2); }
+  .footer-links{ display:flex; gap:26px; flex-wrap:wrap; }
+  .footer-links a{ font-size:13.5px; color:var(--text-2); }
+  .footer-links a:hover{ color:var(--text); }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="javascript:void(0)" data-scroll="top" class="brand">
+      <img src="data:image/webp;base64,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" alt="Korpnex">
+      <span>KORPNEX</span>
+    </a>
+    <nav class="main-nav">
+      <a href="javascript:void(0)" data-scroll="palvelut">Palvelut</a>
+      <a href="javascript:void(0)" data-scroll="miksi">Meistä</a>
+      <a href="javascript:void(0)" data-scroll="tyoturvallisuus">Työturvallisuus</a>
+      <a href="javascript:void(0)" data-scroll="yhteystiedot" class="cta">Ota yhteyttä</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Avaa valikko">☰</button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose" aria-label="Sulje valikko">✕</button>
+  <a href="javascript:void(0)" data-scroll="palvelut">Palvelut</a>
+  <a href="javascript:void(0)" data-scroll="miksi">Meistä</a>
+  <a href="javascript:void(0)" data-scroll="tyoturvallisuus">Työturvallisuus</a>
+  <a href="javascript:void(0)" data-scroll="yhteystiedot" class="cta">Ota yhteyttä</a>
+</div>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-mark" id="heroMark">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <polygon points="18,8 36,8 36,45 64,8 84,8 50,50 84,92 64,92 36,55 36,92 18,92" fill="#132A47"/>
+        <polygon points="36,45 64,8 84,8 50,50" fill="url(#heroG)"/>
+        <defs>
+          <linearGradient id="heroG" x1="36" y1="45" x2="84" y2="8">
+            <stop offset="0" stop-color="#0878E8"/>
+            <stop offset="1" stop-color="#4BAEFF"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div class="hero-content reveal">
+        <div class="eyebrow">Rakennusalan työturvallisuus</div>
+        <h1>Turvallisuus ei ole <span class="glow">sattumaa.</span></h1>
+        <p class="lead">Korpnex auttaa rakennusalan yrityksiä tunnistamaan riskit, kehittämään työturvallisuutta ja rakentamaan turvallisempaa arkea työmaille.</p>
+        <div class="hero-actions">
+          <a href="javascript:void(0)" data-scroll="yhteystiedot" class="btn-primary">Pyydä tarjous</a>
+          <a href="javascript:void(0)" data-scroll="palvelut" class="btn-outline">Tutustu palveluihin</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="wrap intro-inner">
+      <h2 class="reveal">Työturvallisuus on osa hyvää rakentamista.</h2>
+      <p class="reveal">Rakennustyömaan turvallisuus ei synny yhdestä tarkastuksesta. Se rakentuu riskien tunnistamisesta, ennakoinnista, perehdytyksestä, seurannasta ja päivittäisistä toimintatavoista. Korpnex auttaa tekemään turvallisuudesta hallittavan ja käytännönläheisen osan työmaan toimintaa.</p>
+    </div>
+  </section>
+
+  <section id="palvelut">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Palvelut</span>
+        <h2>Asiantuntijuutta työmaan turvallisuuteen</h2>
+      </div>
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <span class="idx">01</span>
+          <h3>Työturvallisuuden kartoitukset</h3>
+          <p>Työmaan lähtötilanne käydään läpi ja riskikohdat tunnistetaan ennen kuin ne ehtivät kasvaa ongelmaksi.</p>
+          <a href="javascript:void(0)" data-scroll="yhteystiedot" class="more">Kysy lisää →</a>
+        </div>
+        <div class="service-card">
+          <span class="idx">02</span>
+          <h3>Turvallisuuskierrokset</h3>
+          <p>Säännölliset kierrokset työmaalla, joissa turvallisuuden tila dokumentoidaan kuvin ja tekstein.</p>
+          <a href="javascript:void(0)" data-scroll="yhteystiedot" class="more">Kysy lisää →</a>
+        </div>
+        <div class="service-card">
+          <span class="idx">03</span>
+          <h3>Riskien arviointi</h3>
+          <p>Työmaan riskit käydään läpi järjestelmällisesti ja priorisoidaan sen mukaan, mikä vaatii toimia ensin.</p>
+          <a href="javascript:void(0)" data-scroll="yhteystiedot" class="more">Kysy lisää →</a>
+        </div>
+        <div class="service-card">
+          <span class="idx">04</span>
+          <h3>Perehdytys ja koulutus</h3>
+          <p>Työmaan perehdytys toteutetaan tilaajan toimeksiannosta. Teemme myös perehdytysmateriaalit valmiiksi työmaan käyttöön.</p>
+          <a href="javascript:void(0)" data-scroll="yhteystiedot" class="more">Kysy lisää →</a>
+        </div>
+        <div class="service-card">
+          <span class="idx">05</span>
+          <h3>Turvallisuuden dokumentointi</h3>
+          <p>Havainnot ja toimenpiteet kootaan selkeäksi, helposti seurattavaksi kokonaisuudeksi.</p>
+          <a href="javascript:void(0)" data-scroll="yhteystiedot" class="more">Kysy lisää →</a>
+        </div>
+        <div class="service-card">
+          <span class="idx">06</span>
+          <h3>Turvallisuuden kehittäminen</h3>
+          <p>Yksittäisten tarkastusten sijaan katsotaan pidemmälle — miten turvallisuudesta tulee pysyvä osa toimintaa.</p>
+          <a href="javascript:void(0)" data-scroll="yhteystiedot" class="more">Kysy lisää →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="miksi" class="intro" style="padding-top:100px; padding-bottom:100px;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Meistä</span>
+        <h2 style="font-size:clamp(30px,4vw,44px);">Perustettu 2026</h2>
+        <p style="color:var(--text-2); font-size:16px; margin-top:4px;">Etelä-Pohjanmaalta, rakennusalan työturvallisuuteen keskittyen</p>
+      </div>
+      <div class="reveal" style="max-width:640px; margin-bottom:56px;">
+        <p style="color:var(--text-2); font-size:16.5px;">Korpnexin taustalla on käytännön kokemus rakennustyömailta — perustaja on työskennellyt työnjohtajana. Korpnex syntyi siitä havainnosta, että työmaan turvallisuus jää usein yhden satunnaisen tarkastuksen varaan, vaikka se vaatisi jatkuvaa ja käytännönläheistä otetta.</p>
+      </div>
+      <div class="section-head reveal" style="margin-bottom:36px;">
+        <span class="tag">Arvomme</span>
+        <h2>Miksi Korpnex?</h2>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-item">
+          <h3>Käytännönläheisyys</h3>
+          <p>Turvallisuus ratkaistaan työmaalla, ei pelkästään paperilla.</p>
+        </div>
+        <div class="why-item">
+          <h3>Ennakointi</h3>
+          <p>Riskien tunnistaminen ennen kuin niistä tulee ongelmia.</p>
+        </div>
+        <div class="why-item">
+          <h3>Selkeys</h3>
+          <p>Turvallisuuteen liittyvät asiat tehdään ymmärrettäviksi ja hallittaviksi.</p>
+        </div>
+        <div class="why-item">
+          <h3>Yhteistyö</h3>
+          <p>Tavoitteena ei ole vain tarkastaa työmaata, vaan auttaa kehittämään toimintaa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tyoturvallisuus">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Prosessi</span>
+        <h2>Miten yhteistyö alkaa?</h2>
+      </div>
+      <div class="process-line reveal">
+        <div class="process-row">
+          <div class="step-dot">01</div>
+          <div><h3>Yhteydenotto</h3><p>Kerrot lyhyesti työmaasta ja tarpeesta.</p></div>
+        </div>
+        <div class="process-row">
+          <div class="step-dot">02</div>
+          <div><h3>Tilanteen kartoitus</h3><p>Käydään yhdessä läpi työmaan nykytilanne.</p></div>
+        </div>
+        <div class="process-row">
+          <div class="step-dot">03</div>
+          <div><h3>Ratkaisun suunnittelu</h3><p>Sovitaan mikä palvelu ja aikataulu sopii työmaalle.</p></div>
+        </div>
+        <div class="process-row">
+          <div class="step-dot">04</div>
+          <div><h3>Toteutus</h3><p>Kierrokset ja havainnot käynnistyvät sovitulla rytmillä.</p></div>
+        </div>
+        <div class="process-row">
+          <div class="step-dot">05</div>
+          <div><h3>Jatkuva kehittäminen</h3><p>Turvallisuutta seurataan ja kehitetään koko projektin ajan.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="wrap reveal">
+      <h2>Tehdäänkö työmaastasi turvallisempi?</h2>
+      <p>Kerro meille työmaasi tilanteesta ja tarpeesta. Katsotaan yhdessä, miten Korpnex voi auttaa.</p>
+      <a href="javascript:void(0)" data-scroll="yhteystiedot" class="btn-primary">Ota yhteyttä →</a>
+    </div>
+  </section>
+
+  <section id="yhteystiedot">
+    <div class="wrap contact-grid">
+      <div class="contact-info reveal">
+        <h2>Ota yhteyttä</h2>
+        <p>Täytä lomake tai ota yhteyttä suoraan — vastaamme nopeasti.</p>
+        <div class="contact-detail"><span>Sähköposti</span><a href="mailto:Niko.Korpela@korpnex.fi">Niko.Korpela@korpnex.fi</a></div>
+        <div class="contact-detail"><span>Puhelin</span><a href="tel:+358453541188">045 354 1188</a></div>
+        <div class="contact-detail"><span>Alue</span>Etelä-Pohjanmaa, laajenee tarpeen mukaan</div>
+      </div>
+      <form class="contact-form reveal" id="contactForm">
+        <input type="hidden" name="access_key" value="be353ef5-1f40-4987-84c6-495da7351f03">
+        <input type="hidden" name="subject" value="Uusi yhteydenotto – korpnex.fi">
+        <input type="hidden" name="from_name" value="Korpnex-nettisivun lomake">
+        <div>
+          <label for="f-nimi">Nimi</label>
+          <input id="f-nimi" name="nimi" type="text" required>
+        </div>
+        <div>
+          <label for="f-yritys">Yritys</label>
+          <input id="f-yritys" name="yritys" type="text">
+        </div>
+        <div>
+          <label for="f-email">Sähköposti</label>
+          <input id="f-email" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="f-puh">Puhelin</label>
+          <input id="f-puh" name="puhelin" type="tel">
+        </div>
+        <div class="full">
+          <label for="f-sijainti">Työmaan sijainti</label>
+          <input id="f-sijainti" name="sijainti" type="text">
+        </div>
+        <div class="full">
+          <label for="f-viesti">Miten voimme auttaa?</label>
+          <textarea id="f-viesti" name="message" required></textarea>
+        </div>
+        <button type="submit" id="contactSubmitBtn">Lähetä yhteydenottopyyntö</button>
+        <p class="form-note" id="formNote">Viesti lähetetään suoraan sähköpostiimme.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="data:image/webp;base64,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" alt="Korpnex">
+      <span>Korpnex Oy — Rakennusalan työturvallisuuden kumppani. Y-tunnus 3652969-4</span>
+    </div>
+    <div class="footer-links">
+      <a href="javascript:void(0)" data-scroll="palvelut">Palvelut</a>
+      <a href="javascript:void(0)" data-scroll="miksi">Meistä</a>
+      <a href="javascript:void(0)" data-scroll="yhteystiedot">Yhteystiedot</a>
+      <a href="javascript:void(0)" data-scroll="top">Tietosuojaseloste</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // internal scroll links (avoids anchor navigation issues in embedded previews)
+  document.querySelectorAll('[data-scroll]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = el.getAttribute('data-scroll');
+      mobileNav.classList.remove('open');
+      if (targetId === 'top') {
+        window.scrollTo({ top:0, behavior:'smooth' });
+        return;
+      }
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) targetEl.scrollIntoView({ behavior:'smooth', block:'start' });
+    });
+  });
+
+  // header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive:true });
+
+  // mobile nav
+  const burger = document.getElementById('burgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileClose = document.getElementById('mobileClose');
+  burger.addEventListener('click', () => mobileNav.classList.add('open'));
+  mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // subtle hero parallax
+  const heroMark = document.getElementById('heroMark');
+  if (heroMark && window.matchMedia('(pointer:fine)').matches) {
+    window.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 14;
+      const y = (e.clientY / window.innerHeight - 0.5) * 14;
+      heroMark.style.transform = `translate(${x}px, calc(-50% + ${y}px))`;
+    }, { passive:true });
+  }
+
+  // contact form — submits directly to Web3Forms, which emails the submission
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const note = document.getElementById('formNote');
+    const btn = document.getElementById('contactSubmitBtn');
+
+    btn.disabled = true;
+    note.textContent = 'Lähetetään...';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        note.textContent = 'Kiitos! Viestisi on lähetetty — palaamme asiaan pian.';
+        form.reset();
+      } else {
+        note.textContent = 'Jokin meni pieleen. Voit myös laittaa suoraan sähköpostia: Niko.Korpela@korpnex.fi';
+        btn.disabled = false;
+      }
+    } catch (err) {
+      note.textContent = 'Jokin meni pieleen. Voit myös laittaa suoraan sähköpostia: Niko.Korpela@korpnex.fi';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
