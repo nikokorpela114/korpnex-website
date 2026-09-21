@@ -3,47 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Korpnex — Työturvallisuuskonsultointi Etelä-Pohjanmaalla</title>
-<meta name="description" content="Korpnex auttaa rakennusalan yrityksiä kehittämään työturvallisuutta käytännönläheisesti: kartoitukset, TR-/MVR-mittaukset, riskien arviointi, perehdytys, dokumentointi ja seuranta.">
-<link rel="canonical" href="https://korpnex.fi/">
+<title>Palvelut — Työturvallisuuskonsultointi ja sovelluskehitys | Korpnex</title>
+<meta name="description" content="Korpnexin sovellukset: räätälöity sovelluskehitys rakennusalan yrityksille sekä Korpnex QC, tuleva valmis laadunvalvontasovellus rakennus- ja aurinkovoimalatyömaille.">
+<link rel="canonical" href="https://korpnex.fi/sovellukset.html">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Korpnex">
-<meta property="og:title" content="Korpnex — Työturvallisuuskonsultointi Etelä-Pohjanmaalla">
-<meta property="og:description" content="Rakennusalan työturvallisuuskonsultointia: turvallisuuskierrokset, TR-/MVR-mittaukset, riskien arviointi ja dokumentointi rakennustyömaille.">
-<meta property="og:url" content="https://korpnex.fi/">
+<meta property="og:title" content="Sovellukset — Sovelluskehitys ja Korpnex QC | Korpnex">
+<meta property="og:description" content="Räätälöity sovelluskehitys rakennusalan yrityksille sekä Korpnex QC — tuleva valmis laadunvalvontasovellus työmaille.">
+<meta property="og:url" content="https://korpnex.fi/sovellukset.html">
 <meta property="og:locale" content="fi_FI">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Korpnex — Työturvallisuuskonsultointi Etelä-Pohjanmaalla">
-<meta name="twitter:description" content="Rakennusalan työturvallisuuskonsultointia: turvallisuuskierrokset, TR-/MVR-mittaukset, riskien arviointi ja dokumentointi rakennustyömaille.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Korpnex",
-  "url": "https://korpnex.fi/",
-  "email": "Niko.Korpela@korpnex.fi",
-  "telephone": "+358453541188",
-  "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": "Etelä-Pohjanmaa"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Seinäjoki",
-    "addressCountry": "FI"
-  },
-  "description": "Rakennusalan työturvallisuuskonsultointia: turvallisuuskierrokset, TR-/MVR-mittaukset, riskien arviointi, perehdytys ja turvallisuuden dokumentointi.",
-  "sameAs": ["https://www.linkedin.com/in/niko-korpela-80287a2b0/", "https://www.instagram.com/korpnex/"]
-}
-</script>
+<meta name="twitter:title" content="Sovellukset — Sovelluskehitys ja Korpnex QC | Korpnex">
+<meta name="twitter:description" content="Räätälöity sovelluskehitys rakennusalan yrityksille sekä Korpnex QC — tuleva valmis laadunvalvontasovellus työmaille.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
   :root{
     --bg: #060D18;
     --bg2: #0B1626;
@@ -115,8 +95,6 @@
   }
   .cta:hover{ background:var(--accent-bright); box-shadow:0 0 26px rgba(18,168,245,0.45); transform:translateY(-1px); }
   .burger{ display:none; background:none; border:none; color:var(--text); font-size:24px; cursor:pointer; }
-  .mobile-actions{ display:none; align-items:center; gap:12px; }
-  .mobile-actions .cta{ padding:9px 16px; font-size:12.5px; }
   .mobile-nav{
     display:none; position:fixed; inset:0; z-index:99; background:var(--bg);
     flex-direction:column; align-items:center; justify-content:center; gap:30px;
@@ -128,7 +106,6 @@
   @media(max-width:860px){
     nav.main-nav{ display:none; }
     .burger{ display:block; }
-    .mobile-actions{ display:flex; }
   }
 
   /* ---------- hero ---------- */
@@ -179,13 +156,9 @@
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
   .hero p.lead{
-    font-size:19px; color:var(--text-2); max-width:52ch; margin-bottom:40px;
+    font-size:18px; color:var(--text-2); max-width:52ch; margin-bottom:40px;
   }
   .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
-  .hero-quicklinks{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 16px; margin-top:22px; font-size:14.5px; color:var(--text-2); }
-  .hero-quicklinks a{ color:var(--text-2); border-bottom:1px solid transparent; transition:color 0.15s, border-color 0.15s; }
-  .hero-quicklinks a:hover{ color:var(--accent-light); border-color:var(--accent-light); }
-  .hero-quicklinks .sep{ opacity:0.4; }
   .btn-primary, .btn-outline{
     padding:15px 28px; font-size:14.5px; font-weight:600; letter-spacing:0.03em;
     border-radius:6px; display:inline-flex; align-items:center; gap:8px;
@@ -204,7 +177,7 @@
   .intro{ padding:110px 0; background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
   .intro-inner{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start; }
   .intro h2{ font-size:clamp(26px,3.2vw,38px); text-transform:uppercase; max-width:14ch; }
-  .intro p{ color:var(--text-2); font-size:18px; max-width:56ch; }
+  .intro p{ color:var(--text-2); font-size:17px; max-width:56ch; }
   @media(max-width:820px){ .intro-inner{ grid-template-columns:1fr; gap:24px; } }
 
   /* ---------- section shared ---------- */
@@ -223,15 +196,6 @@
     transition:box-shadow .3s ease, background .3s ease;
   }
   .service-card:hover{ box-shadow:inset 0 0 0 1px var(--accent), 0 0 40px rgba(8,120,232,0.18); }
-  .service-card .card-icon{ width:44px; height:44px; margin-bottom:18px; color:var(--accent-light); }
-  .service-card .card-icon svg{ width:100%; height:100%; display:block; }
-
-  /* ---------- kenelle sopii ---------- */
-  .fit-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1px; background:var(--border); border:1px solid var(--border); }
-  .fit-item{ background:var(--card); padding:26px 28px; display:flex; align-items:flex-start; gap:16px; }
-  .fit-item .card-icon{ width:24px; height:24px; margin:2px 0 0; color:var(--accent-light); flex:none; }
-  .fit-item .card-icon svg{ width:100%; height:100%; display:block; }
-  .fit-item p{ color:var(--text); font-size:15.5px; line-height:1.55; }
   .service-card .idx{ font-family:'Plus Jakarta Sans',sans-serif; font-size:14px; color:var(--accent-light); letter-spacing:0.08em; display:block; margin-bottom:20px; }
   .service-card h3{ font-size:19.5px; text-transform:uppercase; margin-bottom:12px; letter-spacing:0; }
   .service-card p{ color:var(--text-2); font-size:14.5px; margin-bottom:20px; }
@@ -239,13 +203,7 @@
   @media(max-width:900px){ .services-grid{ grid-template-columns:1fr; } }
 
   /* ---------- miksi korpnex ---------- */
-  .why-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; }
-  .collab-grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:start; }
-  .collab-grid .collab-lead{ font-size:clamp(22px,2.6vw,29px); text-transform:uppercase; margin-bottom:22px; color:var(--text); }
-  .collab-grid p{ color:var(--text-2); font-size:17px; margin-bottom:16px; }
-  .collab-grid p:last-child{ margin-bottom:0; }
-  .collab-items .why-item:first-child{ border-top:1px solid var(--border); }
-  @media(max-width:820px){ .collab-grid{ grid-template-columns:1fr; gap:36px; } }
+  .why-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:28px; }
   .why-item{ padding:30px 0; border-top:1px solid var(--border); }
   .why-item h3{ font-size:17px; text-transform:uppercase; margin-bottom:10px; color:var(--accent-light); }
   .why-item p{ color:var(--text-2); font-size:14.5px; }
@@ -295,7 +253,7 @@
   /* ---------- yhteystiedot ---------- */
   .contact-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; }
   .contact-info h2{ font-size:clamp(26px,3.2vw,36px); text-transform:uppercase; margin-bottom:20px; max-width:14ch; }
-  .contact-info p{ color:var(--text-2); font-size:17px; margin-bottom:30px; max-width:44ch; }
+  .contact-info p{ color:var(--text-2); font-size:16px; margin-bottom:30px; max-width:44ch; }
   .contact-detail{ padding:16px 0; border-top:1px solid var(--border); font-size:15px; }
   .contact-detail span{ display:block; color:var(--text-2); font-size:12.5px; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px; }
 
@@ -334,6 +292,36 @@
   .footer-links{ display:flex; gap:26px; flex-wrap:wrap; }
   .footer-links a{ font-size:13.5px; color:var(--text-2); }
   .footer-links a:hover{ color:var(--text); }
+
+
+  /* ---------- palvelut-sivun omat lisäykset ---------- */
+  .svc-hero{ padding:150px 0 60px; }
+  .svc-hero h1{ font-size:clamp(34px,5vw,54px); margin-bottom:14px; }
+  .svc-hero p{ color:var(--text-2); font-size:17px; max-width:60ch; }
+
+  .svc-category{ padding:50px 0; border-top:1px solid var(--border); }
+  .svc-category:first-of-type{ border-top:none; }
+  .svc-cat-head{ display:flex; align-items:center; gap:14px; margin-bottom:28px; flex-wrap:wrap; }
+  .svc-cat-head h2{ font-size:clamp(24px,3vw,32px); }
+  .svc-badge{ display:inline-block; padding:5px 14px; border-radius:20px; font-size:12.5px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase; }
+  .svc-badge.soon{ background:rgba(18,168,245,0.15); color:var(--accent-bright); border:1px solid rgba(18,168,245,0.35); }
+  .svc-cat-intro{ color:var(--text-2); font-size:15.5px; max-width:70ch; margin-bottom:30px; }
+
+  .svc-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+  .svc-card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:22px; }
+  .svc-card .card-icon{ width:36px; height:36px; margin-bottom:14px; color:var(--accent-light); }
+  .svc-card .card-icon svg{ width:100%; height:100%; display:block; }
+  .svc-card h3{ font-size:16px; margin-bottom:8px; }
+  .svc-card p{ color:var(--text-2); font-size:14px; line-height:1.6; }
+
+  .svc-single{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:30px; max-width:720px; }
+  .svc-single h3{ font-size:19px; margin-bottom:10px; }
+  .svc-single p{ color:var(--text-2); font-size:15px; line-height:1.7; margin-bottom:16px; }
+  .svc-single ul{ color:var(--text-2); font-size:14.5px; line-height:1.9; padding-left:20px; list-style:disc; margin-bottom:16px; }
+
+  .svc-soon-card{ background:var(--card); border:1px dashed var(--border); border-radius:14px; padding:30px; max-width:720px; opacity:0.92; }
+  .svc-soon-card h3{ font-size:19px; margin-bottom:10px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .svc-soon-card p{ color:var(--text-2); font-size:15px; line-height:1.7; }
 
 /* Hero, CTA-painikkeet ja korttien hover-tyylit */
 :root{--accent2:#75c7ff;--white:#fff;--muted:#8fa2b8;--glow:rgba(18,168,245,.20)}
@@ -470,369 +458,126 @@ footer{background:#040810}.footer-inner{opacity:.9}
 
 <header id="siteHeader">
   <div class="wrap header-inner">
-    <a href="#top" class="brand">
+    <a href="index.html" class="brand">
       <img src="data:image/webp;base64,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" alt="Korpnex">
       <span>KORPNEX</span>
     </a>
     <nav class="main-nav">
-      <a href="#palvelut">Palvelut</a>
-      <a href="palvelut.html">Kaikki palvelut</a>
-      <a href="sovellukset.html">Sovellukset</a>
-      <a href="#miksi">Meistä</a>
-      <a href="#tyoturvallisuus">Työturvallisuus</a>
-      <a href="#yhteystiedot" class="cta">Ota yhteyttä</a>
+      <a href="palvelut.html">Palvelut</a>
+      <a href="sovellukset.html" style="color:var(--text);">Sovellukset</a>
+      <a href="index.html#miksi">Meistä</a>
+      <a href="index.html#tyoturvallisuus">Prosessi</a>
+      <a href="index.html#yhteystiedot" class="cta">Ota yhteyttä</a>
     </nav>
-    <div class="mobile-actions">
-      <a href="#yhteystiedot" class="cta">Ota yhteyttä</a>
-      <button class="burger" id="burgerBtn" aria-label="Avaa valikko">☰</button>
-    </div>
+    <button class="burger" id="burgerBtn" aria-label="Avaa valikko">☰</button>
   </div>
 </header>
 
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-close" id="mobileClose" aria-label="Sulje valikko">✕</button>
-  <a href="#palvelut">Palvelut</a>
-  <a href="palvelut.html">Kaikki palvelut</a>
+  <a href="palvelut.html">Palvelut</a>
   <a href="sovellukset.html">Sovellukset</a>
-  <a href="#miksi">Meistä</a>
-  <a href="#tyoturvallisuus">Työturvallisuus</a>
-  <a href="#yhteystiedot" class="cta">Ota yhteyttä</a>
+  <a href="index.html#miksi">Meistä</a>
+  <a href="index.html#tyoturvallisuus">Prosessi</a>
+  <a href="index.html#yhteystiedot" class="cta">Ota yhteyttä</a>
 </div>
 
-<main id="top">
+<main>
 
-  <section class="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-mark" id="heroMark">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <polygon points="18,8 36,8 36,45 64,8 84,8 50,50 84,92 64,92 36,55 36,92 18,92" fill="#132A47"/>
-        <polygon points="36,45 64,8 84,8 50,50" fill="url(#heroG)"/>
-        <defs>
-          <linearGradient id="heroG" x1="36" y1="45" x2="84" y2="8">
-            <stop offset="0" stop-color="#0878E8"/>
-            <stop offset="1" stop-color="#4BAEFF"/>
-          </linearGradient>
-        </defs>
-      </svg>
+  <section class="svc-hero">
+    <div class="wrap reveal">
+      <div class="eyebrow">Korpnex · Sovellukset</div>
+      <h1>Sovellukset</h1>
+      <p>Rakennamme digitaalisia työkaluja rakennusalalle — räätälöitynä asiakkaan tarpeisiin tai valmiina ratkaisuina työmaan arkeen.</p>
+      <div class="hero-proof" style="margin-top:24px;"><span class="proof-pill"><i></i>Räätälöity kehitys</span><span class="proof-pill"><i></i>Valmiit ratkaisut</span><span class="proof-pill"><i></i>Rakennusalan tuntemus</span></div>
     </div>
+  </section>
+
+  <section class="svc-category">
     <div class="wrap">
-      <div class="hero-content reveal">
-        <div class="eyebrow">Rakennusalan työturvallisuus</div>
-        <h1>Turvallisuus ei ole <span class="glow">sattumaa.</span></h1>
-        <p class="lead">Korpnex auttaa rakennusalan yrityksiä tunnistamaan riskit, ratkaisemaan turvallisuuden haasteita ja pitämään sovitut asiat liikkeessä — sekä rakentaa digitaalisia työkaluja työmaan arkeen. Kaikki käytännönläheisesti ja yhteistyössä työmaan kanssa.</p>
-        <div class="hero-actions">
-          <a href="#yhteystiedot" class="btn-primary">Pyydä tarjous</a>
-          <a href="#palvelut" class="btn-outline">Tutustu palveluihin</a>
-          <a href="palvelut.html" class="btn-outline">Kaikki palvelut →</a>
-          <a href="sovellukset.html" class="btn-outline">Sovelluskehitys yrityksille →</a>
-        </div>
-        <div class="hero-quicklinks">
-          <a href="tel:+358453541188">045 354 1188</a><span class="sep">·</span>
-          <a href="mailto:Niko.Korpela@korpnex.fi">Niko.Korpela@korpnex.fi</a>
-        </div>
-        <div class="hero-proof" aria-label="Korpnexin toimintaperiaatteet">
-          <span class="proof-pill"><i></i>Käytännön ratkaisut</span>
-          <span class="proof-pill"><i></i>Ennakoiva ote</span>
-          <span class="proof-pill"><i></i>Yhteistyössä työmaan kanssa</span>
-          <span class="proof-pill"><i></i>Sovelluskehitys yrityksille</span>
-        </div>
+      <div class="svc-cat-head reveal">
+        <h2>Sovelluskehitys rakennusalalle</h2>
+      </div>
+      <p class="svc-cat-intro reveal">Onko yrityksesi prosessi vielä Excelillä, WhatsAppilla tai monen eri järjestelmän varassa? Rakennamme siihen sopivan digitaalisen työkalun.</p>
+      <div class="svc-single reveal">
+        <h3>Sovellus juuri sinun tarpeeseesi</h3>
+        <p>Kaikkea ei tarvitse sovittaa valmiin ohjelmiston ympärille. Rakennamme työkaluja yrityksen oman toimintatavan mukaan — esimerkiksi tuntikirjaukseen, urakoiden seurantaan, laadunhallintaan tai työmaan dokumentointiin. Rakennusalan tuntemus auttaa meitä rakentamaan ratkaisuja, jotka toimivat myös käytännössä työmaalla.</p>
+        <a href="index.html#yhteystiedot" class="btn-primary" style="display:inline-flex;">Pyydä tarjous sovelluksen kehittämisestä →</a>
       </div>
     </div>
   </section>
 
-  <section class="intro">
-    <div class="wrap intro-inner">
-      <h2 class="reveal">Turvallisuus on myös sujuvampaa tekemistä.</h2>
-      <p class="reveal">Hyvä työturvallisuus ei ole irrallinen tarkastus tai kasa raportteja. Se on tapa johtaa työmaata paremmin: riskit tunnistetaan ajoissa, havainnot tehdään näkyviksi ja sovitut asiat viedään loppuun yhdessä työmaan kanssa.</p>
-    </div>
-  </section>
-
-  <div class="value-band">
+  <section class="svc-category">
     <div class="wrap">
-      <div class="value-band-inner reveal">
-        <div class="value-box"><strong>Vähemmän yllätyksiä</strong><span>Riskit ja puutteet näkyviin ennen kuin niistä tulee isompia ongelmia.</span></div>
-        <div class="value-box"><strong>Selkeämpi kokonaisuus</strong><span>Havainnot, toimenpiteet ja seuranta samaan toimintamalliin.</span></div>
-        <div class="value-box"><strong>Kumppani työmaalle</strong><span>Yhteistyötä työnjohdon ja työmaan kanssa — ei syyllisten etsimistä.</span></div>
+      <div class="svc-cat-head reveal">
+        <h2>Korpnex QC</h2>
+        <span class="svc-badge soon">Tulossa myyntiin</span>
       </div>
-    </div>
-  </div>
-
-  <section class="decision-strip">
-    <div class="wrap">
-      <div class="decision-grid reveal">
-        <div><span>01</span><strong>Selkeä tilannekuva</strong><p>Tiedät, missä työmaan turvallisuudessa mennään.</p></div>
-        <div><span>02</span><strong>Priorisoidut havainnot</strong><p>Kaikkea ei tarvitse korjata kerralla — olennaiset asiat ensin.</p></div>
-        <div><span>03</span><strong>Seuranta ja tuki</strong><p>Turvallisuus ei jää raportiksi, vaan etenee kohti käytäntöä.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="kenelle">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="tag">Kenelle</span>
-        <h2>Korpnex auttaa, kun…</h2>
-      </div>
-      <div class="fit-grid reveal">
-        <div class="fit-item">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="9" height="18" rx="1"/><rect x="13" y="9" width="7" height="12" rx="1"/><line x1="7" y1="7" x2="10" y2="7"/><line x1="7" y1="11" x2="10" y2="11"/><line x1="7" y1="15" x2="10" y2="15"/></svg></div>
-          <p>Rakennusliikkeesi tarvitsee ulkopuolista turvallisuusosaamista.</p>
+      <p class="svc-cat-intro reveal">Yksinkertainen ja helppokäyttöinen laadunvalvontasovellus rakennustyömaille — havainnot, kuvat ja korjausten seuranta yhdessä paikassa, suoraan kentältä.</p>
+      <div class="svc-grid reveal">
+        <div class="svc-card">
+          <h3>Valvomo</h3>
+          <ul style="list-style:disc; padding-left:18px; color:var(--text-2); font-size:14px; line-height:1.7;">
+            <li>Hallitse työmaita, urakoitsijoita ja asentajia</li>
+            <li>Määritä käyttäjien roolit ja oikeudet</li>
+            <li>Lataa työmaan pohjapiirustus karttapohjaksi</li>
+            <li>Seuraa avoimia ja korjattuja havaintoja</li>
+          </ul>
         </div>
-        <div class="fit-item">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><polyline points="12 7.5 12 12 15.5 14"/></svg></div>
-          <p>Turvallisuuskierrokset ja dokumentointi vievät liikaa työnjohdon aikaa.</p>
+        <div class="svc-card">
+          <h3>Työnjohto</h3>
+          <ul style="list-style:disc; padding-left:18px; color:var(--text-2); font-size:14px; line-height:1.7;">
+            <li>Kirjaa havainto suoraan työmaalta</li>
+            <li>Sijoita havainto kartalle</li>
+            <li>Lähetä korjaustehtävä oikealle henkilölle</li>
+            <li>Dokumentoi työpäivä kuvineen</li>
+          </ul>
         </div>
-        <div class="fit-item">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <p>Haluat tunnistaa riskit ennen kuin niistä syntyy ongelmia.</p>
-        </div>
-        <div class="fit-item">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.9-4"/><polyline points="5 3 5 7 9 7"/><path d="M4 13a8 8 0 0 0 14.9 4"/><polyline points="19 21 19 17 15 17"/></svg></div>
-          <p>Haluat, että havaitut puutteet myös seurataan korjatuiksi.</p>
-        </div>
-        <div class="fit-item">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.6"/><path d="M12 3.5v2.4M12 18.1v2.4M3.5 12h2.4M18.1 12h2.4"/></svg></div>
-          <p>Haluat riippumattoman ulkopuolisen näkökulman oman työnjohtosi rinnalle — vastuu työmaan johtamisesta pysyy sinulla.</p>
+        <div class="svc-card">
+          <h3>Asentaja</h3>
+          <ul style="list-style:disc; padding-left:18px; color:var(--text-2); font-size:14px; line-height:1.7;">
+            <li>Näe sinulle osoitetut tehtävät</li>
+            <li>Avaa havainto suoraan kartalta</li>
+            <li>Kuittaa työ tehdyksi</li>
+            <li>Lisää kuva tehdystä korjauksesta</li>
+            <li>Ilmoita läheltä piti -havainnot</li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="palvelut">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="tag">Palvelut</span>
-        <h2>Palvelut, jotka tukevat työmaan arkea.</h2>
-        <p style="color:var(--text-2); font-size:17px; max-width:60ch; margin-top:10px;">Kokonaisuus voidaan rakentaa työmaasi tarpeen mukaan — yksittäisestä kartoituksesta jatkuvaan turvallisuuden kehittämiseen.</p>
-      </div>
-      <div class="services-grid reveal">
-        <div class="service-card">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M8 40V16l9 7 9-7 9 7v3" stroke="var(--accent-light)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="40" x2="35" y2="40" stroke="var(--accent-light)" stroke-width="2.6" stroke-linecap="round"/><circle cx="31" cy="24" r="9" fill="var(--bg2)" stroke="var(--accent-bright)" stroke-width="3"/><line x1="37.3" y1="30.3" x2="43.5" y2="36.5" stroke="var(--accent-bright)" stroke-width="3.2" stroke-linecap="round"/></svg></div>
-          <span class="idx">01</span>
-          <h3>Työturvallisuuden kartoitukset</h3>
-          <p>Tunnistat työmaasi riskikohdat ennen kuin niistä syntyy tapaturmia tai yllättäviä seisokkeja — saat selkeän kuvan lähtötilanteesta heti yhteistyön alussa.</p>
-        </div>
-        <div class="service-card">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><rect x="10" y="8" width="24" height="32" rx="3" fill="none" stroke="var(--accent-light)" stroke-width="2.4"/><rect x="17" y="5" width="10" height="6" rx="2" fill="var(--accent-light)"/><line x1="15" y1="18" x2="29" y2="18" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round"/><line x1="15" y1="24" x2="29" y2="24" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round"/><line x1="15" y1="30" x2="24" y2="30" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round"/><circle cx="34" cy="32" r="9.5" fill="var(--accent-bright)"/><path d="M30 32l2.5 2.5L38 29" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span class="idx">02</span>
-          <h3>Turvallisuuskierrokset</h3>
-          <p>Tunnistamme vaarat ennen kuin niistä syntyy tapaturmia, tuotantokatkoja tai ylimääräisiä kustannuksia. Teemme säännöllisiä TR-/MVR-kierroksia ja seuraamme havaintojen korjaamista, kunnes sovitut toimenpiteet on toteutettu.</p>
-        </div>
-        <div class="service-card">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M21 8.5a3 3 0 0 1 5 0l14 24a3 3 0 0 1-2.6 4.5H9.6A3 3 0 0 1 7 32.5Z" fill="none" stroke="var(--accent-light)" stroke-width="2.4" stroke-linejoin="round"/><line x1="24" y1="19" x2="24" y2="27" stroke="var(--accent-light)" stroke-width="2.6" stroke-linecap="round"/><circle cx="24" cy="32" r="1.6" fill="var(--accent-light)"/><circle cx="35" cy="34" r="8" fill="var(--accent-bright)"/><circle cx="35" cy="34" r="2.6" fill="var(--bg2)"/><path d="M35 27.5v1.8M35 38.7V40.5M28.5 34h1.8M39.7 34h1.8M30.6 29.6l1.3 1.3M38.1 38.1l1.3 1.3M39.4 29.6l-1.3 1.3M31.9 38.1l-1.3 1.3" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <span class="idx">03</span>
-          <h3>Riskien arviointi</h3>
-          <p>Vältät ylimääräiset kustannukset ja viivästykset, kun riskit priorisoidaan oikein. Käymme läpi koko työmaan, emme vain yleisimpiä vaaroja.</p>
-        </div>
-        <div class="service-card">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><rect x="22" y="10" width="18" height="13" rx="1.5" fill="none" stroke="var(--accent-light)" stroke-width="2.4"/><line x1="26" y1="15" x2="36" y2="15" stroke="var(--accent-light)" stroke-width="2" stroke-linecap="round"/><line x1="26" y1="19" x2="33" y2="19" stroke="var(--accent-light)" stroke-width="2" stroke-linecap="round"/><line x1="31" y1="23" x2="31" y2="27" stroke="var(--accent-light)" stroke-width="2.2"/><circle cx="13" cy="19" r="6" fill="var(--accent-bright)"/><path d="M7.5 17.5a5.5 5.5 0 0 1 11 0" fill="none" stroke="var(--bg2)" stroke-width="2.2" stroke-linecap="round"/><path d="M4.5 40c0-6.5 3.8-10.5 8.5-10.5s8.5 4 8.5 10.5" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round"/></svg></div>
-          <span class="idx">04</span>
-          <h3>Perehdytys ja koulutus</h3>
-          <p>Säästät työnjohdon aikaa, kun perehdytys ja sen materiaalit hoituvat valmiiksi — työmaalle tulevat tietävät heti, mitä turvallisuudelta odotetaan.</p>
-        </div>
-        <div class="service-card">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M12 6h16l8 8v28a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" fill="none" stroke="var(--accent-light)" stroke-width="2.4" stroke-linejoin="round"/><path d="M28 6v8h8" fill="none" stroke="var(--accent-light)" stroke-width="2.4" stroke-linejoin="round"/><line x1="14" y1="24" x2="26" y2="24" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round"/><line x1="14" y1="30" x2="26" y2="30" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round"/><circle cx="33" cy="34" r="9" fill="var(--accent-bright)"/><path d="M29 34l2.7 2.7L38 30.5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span class="idx">05</span>
-          <h3>Turvallisuuden dokumentointi</h3>
-          <p>Näet aina yhdellä silmäyksellä, mikä on korjattu ja mikä vielä avoinna — ei hajanaisia muistiinpanoja tai unohtuneita havaintoja.</p>
-        </div>
-        <div class="service-card">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><line x1="8" y1="40" x2="40" y2="40" stroke="var(--accent-light)" stroke-width="2.4" stroke-linecap="round"/><rect x="11" y="30" width="6" height="10" rx="1.2" fill="var(--accent-light)"/><rect x="21" y="23" width="6" height="17" rx="1.2" fill="var(--accent-light)"/><rect x="31" y="14" width="6" height="26" rx="1.2" fill="var(--accent-bright)"/><path d="M13 22l8-7 6 5 12-13" fill="none" stroke="var(--accent-bright)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 7h9v9" fill="none" stroke="var(--accent-bright)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span class="idx">06</span>
-          <h3>Turvallisuuden kehittäminen</h3>
-          <p>Turvallisuus paranee kierros kierrokselta eikä jää yksittäisten tarkastusten varaan — avoimet puutteet pysyvät näkyvissä, kunnes ne on korjattu.</p>
-        </div>
-      </div>
-      <div class="trust-panel reveal" style="margin-top:40px;">
-        <div class="eyebrow" style="justify-content:center;">Digitaalinen seuranta</div>
-        <h3 style="font-size:clamp(22px,2.6vw,28px); text-transform:uppercase; margin-bottom:14px;">Turvallisuus ei pääty tarkastukseen.</h3>
-        <p class="small">Kehitämme digitaalista työkalua, jonka avulla havainnot ja puutteet pysyvät seurannassa niiden syntymisestä korjaukseen asti — samalla periaatteella, jota jo sovellamme turvallisuuskierroksilla. Avoimet asiat eivät jää yhden kierroksen taakse, vaan pysyvät näkyvissä, kunnes ne on hoidettu.</p>
-      </div>
-      <div class="trust-panel reveal" style="margin-top:24px;">
-        <div class="eyebrow" style="justify-content:center;">Sovelluskehitys</div>
-        <h3 style="font-size:clamp(22px,2.6vw,28px); text-transform:uppercase; margin-bottom:14px;">Sovellus juuri sinun tarpeeseesi.</h3>
-        <p class="small">Kaikkea ei tarvitse sovittaa valmiin ohjelmiston ympärille. Rakennamme työkaluja yrityksen oman toimintatavan mukaan — esimerkiksi tuntikirjaukseen, urakoiden seurantaan, laadunhallintaan tai työmaan dokumentointiin.</p>
-      </div>
-      <div class="reveal" style="text-align:center; margin-top:36px;">
-        <a href="palvelut.html" class="btn-outline" style="display:inline-flex;">Katso kaikki palvelut →</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="miksi" class="intro" style="padding-top:100px; padding-bottom:100px;">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="tag">Meistä</span>
-        <h2 style="font-size:clamp(30px,4vw,44px);">Perustettu 2026</h2>
-        <p style="color:var(--text-2); font-size:17px; margin-top:4px;">Etelä-Pohjanmaalta — uusi yritys, mutta ei uusi ala: taustalla vuosien käytännön kokemus rakennustyömailta.</p>
-      </div>
-      <div class="reveal" style="max-width:640px; margin-bottom:56px;">
-        <p style="color:var(--text-2); font-size:16.5px;">Olen Niko Korpela, Korpnexin perustaja. Olen työskennellyt työnjohtajana rakennustyömailla ja opiskelen rakennustekniikkaa Seinäjoen ammattikorkeakoulussa. Korpnex syntyi siitä havainnosta, että työmaan turvallisuus jää usein yhden satunnaisen tarkastuksen varaan, vaikka se vaatisi jatkuvaa ja käytännönläheistä otetta.</p>
-        <p style="margin-top:14px;"><a href="https://www.linkedin.com/in/niko-korpela-80287a2b0/" target="_blank" rel="noopener" style="color:var(--accent-light); font-weight:600; font-size:15px;">Katso taustani LinkedInissä →</a></p>
-      </div>
-      <div class="section-head reveal" style="margin-bottom:36px;">
-        <span class="tag">Arvomme</span>
-        <h2>Miksi Korpnex?</h2>
-      </div>
-      <div class="why-grid reveal">
-        <div class="why-item">
-          <h3>Käytännönläheisyys</h3>
-          <p>Turvallisuus ratkaistaan työmaalla, ei pelkästään paperilla.</p>
-        </div>
-        <div class="why-item">
-          <h3>Ennakointi</h3>
-          <p>Riskien tunnistaminen ennen kuin niistä tulee ongelmia.</p>
-        </div>
-        <div class="why-item">
-          <h3>Selkeys</h3>
-          <p>Turvallisuuteen liittyvät asiat tehdään ymmärrettäviksi ja hallittaviksi.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="yhteistyo">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="tag">Toimintatapamme</span>
-        <h2>Emme etsi syyllisiä — etsimme ratkaisuja.</h2>
-      </div>
-      <div class="collab-grid reveal">
-        <div>
-          <h3 class="collab-lead">Turvallisuutta kehitetään yhdessä</h3>
-          <p>Korpnex ei ole työmaalla vain tarkastamassa ja kirjaamassa puutteita. Teemme mittaukset, havainnot ja dokumentoinnin huolellisesti, mutta yhtä tärkeää on se, mitä niiden jälkeen tapahtuu.</p>
-          <p>Toimimme yhteistyössä työmaan johdon, työnjohdon ja työntekijöiden kanssa. Tavoitteena on tunnistaa riskit, löytää toimivat ratkaisut ja auttaa työmaata kehittämään turvallisuutta käytännössä.</p>
-          <p>Turvallisuushavainto ei ole pelkkä merkintä raportissa — sen tarkoitus on johtaa toimenpiteeseen ja sitä kautta turvallisempaan työskentelyyn. Korpnexin tehtävä ei ole tulla työmaalle etsimään virheitä, vaan auttaa tekemään asiat paremmin.</p>
-        </div>
-        <div class="collab-items">
-          <div class="why-item">
-            <h3>Tunnistamme</h3>
-            <p>Riskit ja kehityskohteet käydään läpi järjestelmällisesti.</p>
+      <div class="svc-soon-card reveal" style="max-width:none; margin-top:30px;">
+        <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:30px; align-items:center;">
+          <div>
+            <h3>Yksinkertainen ja helppo ottaa käyttöön</h3>
+            <p>Ei turhia valikoita tai monimutkaisia toimintoja. Korpnex QC kokoaa havainnot, kuvat, kartan ja tehtävien seurannan yhteen selkeään sovellukseen.</p><p style="margin-top:12px;">Korpnex QC tulee myöhemmin myyntiin omana, valmiina tuotteena. Kerromme käyttöönotosta ja julkaisusta lisää kehityksen edetessä.</p>
           </div>
-          <div class="why-item">
-            <h3>Ratkaisemme</h3>
-            <p>Yhdessä työmaan johdon, työnjohdon ja työntekijöiden kanssa.</p>
-          </div>
-          <div class="why-item">
-            <h3>Seuraamme</h3>
-            <p>Että sovitut toimenpiteet myös toteutuvat.</p>
+          <div style="border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--card);">
+            <img src="data:image/jpeg;base64,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DLi1u4JbfbBM5Pmoz4kUHaMEKM5GR8w7giuw8+b/AKZ/rR583/TP9aOeP8q/EdvM4K38Z+ON0XmeBLoRhm81nLBsHOzAVT0x82Ac4GOTirtj4s8VyapYpdeCL6C3u3SNgJA32YGR1Z3YDHACNgdj17V2Hnzf9M/1o8+b/pn+tDnH+VfiKz7i3f8Aro/91v6VHcyXUVjC1nCs0hKAqxwNvc57UMzO+9yMgYAHQU5JZEUKNhA4GaytoUZ1lq+qyzGKbRJogquTKzEBiFBGBjueOv51GdX1dWiYaRLJFsO9l/iOMggdcHj8+1a3ny+ifrR58von60rMdzIh17UMlbjSDHIdpCeYQQG4AOR1zn8AT2xTrHXby5ljVtLlijIRmfLHarHrgqP8fbHNavny+kf60efL6J+tFhXMu41rUPPeK20eaVRM0QlUnAwSM8j2+nPXIxTLXWtWDxi70WdFZkDMAfkBHzE4B6H/AOtmtfz5fRP1o8+X0T9aLDuZ15qupQ3dxbR6cJWRsxsCx+TjkgDOSTjj39DUUmtapulij0d/OVQQofdjOcZwOvH0469K1vPl9E/Wjz5fSP8AWizC5jy63qkEyx3GjuFZwoeNiQOg7jnJzgfSruj6nc3SE3djPbuXAC7CdvA6nHrn0q358vpH+tHny+ifrRYRaoqr58von60efL6J+tFguWqKq+fL6J+tHny+ifrRYLlqiqvny+ifrR58von60WC5aoqr58von60efL6J+tFguWqKq+fL6J+tHny+ifrRYLlqiq3ny+ifrR58von60WC5Zoqt58von60efL6J+tFguWaKrefL6J+tHny+ifrRYLlmiq3ny+ifrR58von60WC5Zoqt58von60efL6J+tFguWaKrefL6J+tHny+ifrRYLlmiq3ny+ifrR58von60WC5Zoqt58von60efL6J+tFguWaKrefL6J+tHny+ifrRYLlmiq3ny+ifrR58von60WC5Zoqt58von60efL6J+tFguWaKrefL6J+tHny+ifrRYLlmiq3ny+ifrR58von60WC4lx/r/wDgI/maZSsWZyzYzjHFJVAFFFFAgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArx79prxZr3hrTdHi0K/exa8lk82WMDf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wIOc9fUfpRcRqz/2mpTyfIYbm3bx0Gfl6e2aWf8AtBoYvL2JIR+8xggHb79eazZtM8QGVTHrzKhclwYkzjHAHy9if5c8csn0zxHvUw678oDblaNeTn5edvTHXpzk5ouM0V/tX7epJj+zZ+YcZxjt+NFsdW37ZxbhSD8y9QccfrUWiWerW9zPJqN+lyjoioqj7pBOT+OR09O1atFwMmQa75bBGg37uDxjGB/9f8fatSLf5SeZjftG7Hr3p1FDdwCiiikAVSq6eBmqVUhMKKKKYgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKOQchip9RRRQAZk/56v8AnRmT/nq/50UUDDMn/PV/zozJ/wA9X/OiigAzJ/z1f86Myf8APV/zoooAMyf89X/OjMn/AD1f86KKADMn/PV/zozJ/wA9X/OiigAzJ/z1f86Myf8APV/zoooAMyf89X/OjMn/AD1f86KKADLEYaRmHoTRRRQIKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKCcUAFFIWpN1ADqKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooACcUxj3pzVFIaAPK/jH8cvDHw51GPR5bW61fWXUObO1IXylPQux6E9gATXmx/a701T83gPUB351BP/iK8v+MiXPhn9pHW77XkkWO7na4tZ2BI8p1ARh7D7vHQiuC8c6npuow6f9ik8yWNG8wgEBQei8jr1PoPxrtp4WMqEqrklbZdWaSUFBO/vN7W/G5+mFFNhfzIkkxjcoOPSnVxGYUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFADT0pjjIqQ02gDmvGPg/w14ttUtfEmiWWqRRnMfnx5ZD/ALLDkfga5IfAn4T558E2H/f2X/4uvUCBWJ451s+GvCWpa6tqLprKBpREX2hiB0zg4p3A/9k=" alt="Korpnex QC -valvomonäkymä" style="display:block; width:100%; height:auto;">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="tyoturvallisuus">
+  <section class="svc-category" style="padding-top:0;background:var(--bg);border-top:0;">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="tag">Prosessi</span>
-        <h2>Miten yhteistyö alkaa?</h2>
-      </div>
-      <div class="process-line reveal">
-        <div class="process-row">
-          <div class="step-dot">01</div>
-          <div><h3>Yhteydenotto</h3><p>Kerrot lyhyesti työmaasta ja tarpeesta.</p></div>
-        </div>
-        <div class="process-row">
-          <div class="step-dot">02</div>
-          <div><h3>Tilanteen kartoitus</h3><p>Käydään yhdessä läpi työmaan nykytilanne.</p></div>
-        </div>
-        <div class="process-row">
-          <div class="step-dot">03</div>
-          <div><h3>Ratkaisun suunnittelu</h3><p>Sovitaan, mikä palvelu ja aikataulu sopivat työmaalle.</p></div>
-        </div>
-        <div class="process-row">
-          <div class="step-dot">04</div>
-          <div><h3>Toteutus</h3><p>Kierrokset ja havainnot käynnistyvät sovitulla rytmillä.</p></div>
-        </div>
-        <div class="process-row">
-          <div class="step-dot">05</div>
-          <div><h3>Jatkuva kehittäminen</h3><p>Turvallisuutta seurataan ja kehitetään koko projektin ajan.</p></div>
-        </div>
-      </div>
+      <div class="svc-cta-note reveal"><div><strong>Onko yritykselläsi prosessi, joka pitäisi saada toimimaan digitaalisesti?</strong><br><span style="color:var(--text-2);font-size:14px;">Kerro meille tarpeesta. Suunnitellaan yhdessä ratkaisu, joka sopii juuri sinun toimintatapaan.</span></div><a href="index.html#yhteystiedot" class="btn-primary">Kysy Korpnexilta →</a></div>
     </div>
   </section>
 
   <section class="final-cta">
     <div class="wrap reveal">
-      <span class="tag" style="display:block;color:var(--accent-light);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;">Aloitetaan keskustelusta</span>
-      <h2>Onko työmaallasi turvallisuuteen liittyvä tarve?</h2>
-      <p>Kerro lyhyesti tilanteestasi. Käydään yhdessä läpi, olisiko Korpnexista sinulle hyötyä — ilman turhaa byrokratiaa.</p>
-      <a href="#yhteystiedot" class="btn-primary">Pyydä tarjous →</a>
-    </div>
-  </section>
-
-  <section id="yhteystiedot">
-    <div class="wrap contact-grid">
-      <div class="contact-info reveal">
-        <h2>Ota yhteyttä</h2>
-        <p>Kerro työmaasta, tilanteesta tai palvelusta, jota tarvitset. Lyhyt viesti riittää — jatketaan siitä.</p>
-        <div class="contact-detail"><span>Sähköposti</span><a href="mailto:Niko.Korpela@korpnex.fi">Niko.Korpela@korpnex.fi</a></div>
-        <div class="contact-detail"><span>Puhelin</span><a href="tel:+358453541188">045 354 1188</a></div>
-        <div class="contact-detail"><span>Alue</span>Etelä-Pohjanmaa, laajenee tarpeen mukaan</div>
-        <div class="contact-detail"><span>LinkedIn</span><a href="https://www.linkedin.com/in/niko-korpela-80287a2b0/" target="_blank" rel="noopener">Niko Korpela</a></div>
-        <div class="contact-detail"><span>Instagram</span><a href="https://www.instagram.com/korpnex/" target="_blank" rel="noopener">@korpnex</a></div>
+      <h2>Kiinnostuitko sovelluskehityksestä tai Korpnex QC:sta?</h2>
+      <p>Ota yhteyttä, niin kerromme lisää.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="index.html#yhteystiedot" class="btn-primary">Pyydä tarjous →</a>
+        <a href="index.html" class="btn-outline">← Takaisin etusivulle</a>
       </div>
-      <form class="contact-form reveal" id="contactForm">
-        <input type="hidden" name="access_key" value="be353ef5-1f40-4987-84c6-495da7351f03">
-        <input type="hidden" name="subject" value="Uusi yhteydenotto — korpnex.fi">
-        <input type="hidden" name="from_name" value="Korpnex-nettisivun lomake">
-        <div>
-          <label for="f-nimi">Nimi</label>
-          <input id="f-nimi" name="nimi" type="text" required>
-        </div>
-        <div>
-          <label for="f-yritys">Yritys</label>
-          <input id="f-yritys" name="yritys" type="text">
-        </div>
-        <div>
-          <label for="f-email">Sähköposti</label>
-          <input id="f-email" name="email" type="email" required>
-        </div>
-        <div>
-          <label for="f-puh">Puhelin</label>
-          <input id="f-puh" name="puhelin" type="tel">
-        </div>
-        <div class="full">
-          <label for="f-sijainti">Työmaan sijainti</label>
-          <input id="f-sijainti" name="sijainti" type="text">
-        </div>
-        <div class="full">
-          <label for="f-palvelu">Mistä palvelusta olet kiinnostunut?</label>
-          <select id="f-palvelu" name="palvelu">
-            <option value="">Valitse palvelu (valinnainen)</option>
-            <option>Työturvallisuuden kartoitus</option>
-            <option>Turvallisuuskierros / TR- tai MVR-mittaus</option>
-            <option>Riskien arviointi</option>
-            <option>Perehdytys ja koulutus</option>
-            <option>Turvallisuuden dokumentointi</option>
-            <option>Turvallisuuden kehittäminen</option>
-            <option>Työnjohdon tuki</option>
-            <option>Digitaalinen turvallisuusseuranta</option>
-            <option>En vielä tiedä — kartoitetaan tarve</option>
-          </select>
-        </div>
-        <div class="full">
-          <label for="f-viesti">Miten voimme auttaa?</label>
-          <textarea id="f-viesti" name="message" required></textarea>
-        </div>
-        <button type="submit" id="contactSubmitBtn">Ota yhteyttä →</button>
-        <p class="form-note" id="formNote">Voit kertoa tarpeesta lyhyesti — tarkennetaan yksityiskohdat yhdessä.</p>
-      </form>
-    </div>
-  </section>
-
-  <section id="tietosuojaseloste" style="padding:70px 0;">
-    <div class="wrap reveal" style="max-width:720px;">
-      <h2 style="font-size:clamp(24px,3vw,32px); margin-bottom:20px;">Tietosuojaseloste</h2>
-      <p style="color:var(--text-2); font-size:15px; margin-bottom:14px;">Rekisterinpitäjä: Korpnex (Y-tunnus 3652969-4), Seinäjoki. Yhteydenotot: <a href="mailto:Niko.Korpela@korpnex.fi" style="color:var(--accent-light);">Niko.Korpela@korpnex.fi</a></p>
-      <p style="color:var(--text-2); font-size:15px; margin-bottom:14px;">Kun täytät nettisivun yhteydenottolomakkeen, keräämme antamasi tiedot: nimi, yritys, sähköposti, puhelinnumero, työmaan sijainti ja viestisi sisältö. Tietoja käytetään ainoastaan yhteydenottopyyntöösi vastaamiseen ja mahdollisen asiakassuhteen valmisteluun. Yhteydenoton hoitamiseen ja lomakkeen tekniseen välittämiseen käytetään ulkopuolista palveluntarjoajaa.</p>
-      <p style="color:var(--text-2); font-size:15px; margin-bottom:14px;">Tiedot säilytetään niin kauan kuin on tarpeen yhteydenoton käsittelemiseksi tai mahdollisen asiakassuhteen ajan, minkä jälkeen ne poistetaan tai anonymisoidaan.</p>
-      <p style="color:var(--text-2); font-size:15px;">Sinulla on oikeus pyytää pääsy tietoihisi, niiden oikaisua tai poistamista ottamalla yhteyttä yllä olevaan sähköpostiosoitteeseen.</p>
     </div>
   </section>
 
 </main>
+
+
 
 <footer>
   <div class="wrap footer-inner">
@@ -841,14 +586,13 @@ footer{background:#040810}.footer-inner{opacity:.9}
       <span>Korpnex — Rakennusalan työturvallisuuden kumppani Etelä-Pohjanmaalla. Y-tunnus 3652969-4</span>
     </div>
     <div class="footer-links">
-      <a href="#palvelut">Palvelut</a>
-      <a href="palvelut.html">Kaikki palvelut</a>
+      <a href="palvelut.html">Palvelut</a>
       <a href="sovellukset.html">Sovellukset</a>
-      <a href="#miksi">Meistä</a>
-      <a href="#yhteystiedot">Yhteystiedot</a>
+      <a href="index.html#miksi">Meistä</a>
+      <a href="index.html#yhteystiedot">Yhteystiedot</a>
       <a href="https://www.linkedin.com/in/niko-korpela-80287a2b0/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.instagram.com/korpnex/" target="_blank" rel="noopener">Instagram</a>
-      <a href="#tietosuojaseloste">Tietosuojaseloste</a>
+      <a href="index.html#tietosuojaseloste">Tietosuojaseloste</a>
     </div>
   </div>
 </footer>
@@ -871,49 +615,8 @@ footer{background:#040810}.footer-inner{opacity:.9}
   // reveal on scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold:0.15 });
+  }, { threshold:0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // subtle hero parallax
-  const heroMark = document.getElementById('heroMark');
-  if (heroMark && window.matchMedia('(pointer:fine)').matches) {
-    window.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 14;
-      const y = (e.clientY / window.innerHeight - 0.5) * 14;
-      heroMark.style.transform = `translate(${x}px, calc(-50% + ${y}px))`;
-    }, { passive:true });
-  }
-
-  // contact form — submits directly to Web3Forms, which emails the submission
-  document.getElementById('contactForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const note = document.getElementById('formNote');
-    const btn = document.getElementById('contactSubmitBtn');
-
-    btn.disabled = true;
-    note.textContent = 'Lähetetään...';
-
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form)
-      });
-      const data = await res.json();
-
-      if (data.success) {
-        note.textContent = 'Kiitos! Viestisi on lähetetty — palaamme asiaan pian.';
-        form.reset();
-      } else {
-        note.textContent = 'Jokin meni pieleen. Voit myös laittaa suoraan sähköpostia: Niko.Korpela@korpnex.fi';
-        btn.disabled = false;
-      }
-    } catch (err) {
-      note.textContent = 'Jokin meni pieleen. Voit myös laittaa suoraan sähköpostia: Niko.Korpela@korpnex.fi';
-      btn.disabled = false;
-    }
-  });
 </script>
 
 
