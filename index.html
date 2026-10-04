@@ -483,6 +483,35 @@ footer{background:#040810}.footer-inner{opacity:.9}
   nav.main-nav a{white-space:nowrap}
   @media(max-width:1240px){nav.main-nav{gap:22px}}
   @media(max-width:1180px){nav.main-nav{display:none}.burger{display:block}.mobile-actions{display:flex}}
+
+/* Korpnex QC -mainos etusivun herossa */
+.hero-wrap{width:100%}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:48px;align-items:center}
+.hero-layout .hero-content{max-width:660px}
+.hero-qc{position:relative;z-index:3;padding:26px 26px 24px;border-radius:22px;background:linear-gradient(160deg,rgba(14,38,70,.92),rgba(8,17,31,.94) 60%);border:1px solid rgba(32,184,255,.45);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 6px rgba(32,184,255,.06),0 0 60px rgba(8,120,232,.25);backdrop-filter:blur(6px)}
+.hero-qc:before{content:"";position:absolute;inset:-1px;border-radius:22px;padding:1px;background:linear-gradient(120deg,rgba(32,184,255,.9),transparent 35%,transparent 65%,rgba(32,184,255,.7));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;animation:qcGlow 6s linear infinite;background-size:200% 200%}
+@keyframes qcGlow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero-qc-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;background:rgba(34,197,94,.14);border:1px solid rgba(34,197,94,.5);color:#86efac;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+.hero-qc-badge i{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e;animation:qcPulse 1.8s ease-in-out infinite}
+@keyframes qcPulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero-qc-title{font-size:30px;font-weight:800;margin:14px 0 8px;letter-spacing:-.02em}
+.hero-qc-sub{font-size:14.5px;line-height:1.6;color:var(--text-2)}
+.hero-qc-shots{position:relative;display:block;margin:20px 0 18px;padding-right:56px}
+.hero-qc-frame{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--border);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+.hero-qc-frame img,.hero-qc-phone img{display:block;width:100%;height:auto}
+.hero-qc-phone{position:absolute;right:0;bottom:-14px;width:96px;border:3px solid #1b2a42;border-radius:14px;overflow:hidden;box-shadow:0 14px 30px rgba(0,0,0,.55);transition:transform .3s ease}
+.hero-qc-shots:hover .hero-qc-phone{transform:translateY(-4px)}
+.hero-qc-price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:22px}
+.hero-qc-price strong{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800}
+.hero-qc-price span{font-size:13px;color:var(--text-2)}
+.hero-qc-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:16px}
+.hero-qc-actions .btn-primary{padding:13px 20px;font-size:13.5px}
+.hero-qc-more{font-weight:600;font-size:14.5px;color:var(--accent-light)}
+.hero-qc-more:hover{color:#fff}
+.hero-mark{opacity:.28!important}
+@media(max-width:1100px){.hero-layout{grid-template-columns:1fr;gap:40px}.hero-qc{max-width:560px}.hero-mark{opacity:.35}}
+@media(max-width:640px){.hero-qc{padding:20px}.hero-qc-title{font-size:25px}.hero-qc-phone{width:80px}}
+@media (prefers-reduced-motion: reduce){.hero-qc:before,.hero-qc-badge i{animation:none}}
 </style>
 
 
@@ -540,7 +569,8 @@ footer{background:#040810}.footer-inner{opacity:.9}
         </defs>
       </svg>
     </div>
-    <div class="wrap">
+    <div class="wrap hero-wrap">
+     <div class="hero-layout">
       <div class="hero-content reveal">
         <div class="eyebrow">Rakennusalan työturvallisuus</div>
         <h1>Turvallisuus ei ole <span class="glow">sattumaa.</span></h1>
@@ -562,6 +592,21 @@ footer{background:#040810}.footer-inner{opacity:.9}
           <span class="proof-pill"><i></i>Sovelluskehitys yrityksille</span>
         </div>
       </div>
+      <aside class="hero-qc reveal" aria-label="Korpnex QC">
+        <div class="hero-qc-top"><span class="hero-qc-badge"><i></i>Uutuus · nyt myynnissä</span></div>
+        <h2 class="hero-qc-title">Korpnex QC</h2>
+        <p class="hero-qc-sub">Laadunvalvonta työmaalle ilman paperia. Havainnot kuvineen pohjapiirustukseen, korjaukset suoraan asentajan puhelimeen.</p>
+        <a href="korpnex-qc.html" class="hero-qc-shots" aria-label="Katso Korpnex QC">
+          <span class="hero-qc-frame"><img src="img/qc-valvomo.webp" alt="Korpnex QC Valvomo" width="1800" height="906"></span>
+          <span class="hero-qc-phone"><img src="img/qc-asentaja.webp" alt="Korpnex QC asentajan näkymä" width="780" height="1688"></span>
+        </a>
+        <div class="hero-qc-price"><strong>89 €</strong><span>/kk + alv · rajoittamaton määrä käyttäjiä</span></div>
+        <div class="hero-qc-actions">
+          <a href="https://korpnex-qc.netlify.app/valvomo/" target="_blank" rel="noopener" class="btn-primary">Kokeile 30 pv ilmaiseksi</a>
+          <a href="korpnex-qc.html" class="hero-qc-more">Tutustu →</a>
+        </div>
+      </aside>
+     </div>
     </div>
   </section>
 
