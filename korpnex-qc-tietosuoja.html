@@ -160,7 +160,7 @@
 <main>
   <p class="eyebrow">Korpnex QC</p>
   <h1>Tietosuojaseloste</h1>
-  <p class="updated">Päivitetty <span id="d">3.10.2026</span></p>
+  <p class="updated">Päivitetty <span id="d">5.10.2026</span></p>
 
   <div class="lede">
     <strong>Lyhyesti:</strong> Korpnex QC on rakennustyömaiden laadunvalvontaan ja työturvallisuuden dokumentointiin
@@ -240,7 +240,13 @@
       <tr><td>Resend</td><td>Palveluun liittyvien sähköpostien (esim. tunnukset, hyväksyntälinkit) lähetys</td></tr>
       <tr><td>Stripe, Inc.</td><td>Asiakasyrityksen tilauslaskutus — ei yleensä sisällä yksittäisten työntekijöiden
         henkilötietoja, vain asiakasyrityksen laskutusyhteyshenkilön tiedot</td></tr>
+      <tr><td>GitHub, Inc.</td><td>Öisen varmuuskopion automaattinen ajo. Varmuuskopio salataan ennen siirtoa
+        eikä jää GitHubiin.</td></tr>
+      <tr><td>Cloudflare, Inc.</td><td>Salattujen varmuuskopioiden säilytys (Cloudflare R2, EU-alue)</td></tr>
     </table>
+    <p>
+      Palvelun tietokanta ja tiedostot sijaitsevat EU:ssa (Irlanti), ja salatut varmuuskopiot säilytetään EU-alueella.
+    </p>
     <p class="muted">
       Osa näistä palveluntarjoajista voi käsitellä tietoja myös EU/ETA-alueen ulkopuolella. Tällöin käytetään
       kyseisen palveluntarjoajan tarjoamia GDPR:n mukaisia suojatoimia (esim. EU:n vakiosopimuslausekkeet).
@@ -257,6 +263,9 @@
       <li>Käyttöoikeudet on porrastettu roolin mukaan (asentaja / työnjohtaja / pääkäyttäjä), ja käyttäjätilien
         hallinta (luonti, poisto, salasanan vaihto) on rajattu asiakasyrityksen omille pääkäyttäjille.</li>
       <li>Salasanat tallennetaan suojattuna tiivisteenä, ei koskaan selväkielisenä.</li>
+      <li>Asiakasyrityksen pääkäyttäjä voi rajata työnjohtajat, asentajat ja urakoitsijat tiettyihin työmaihin,
+        jolloin he näkevät vain niiden työmaiden tiedot.</li>
+      <li>Tiedoista otetaan joka yö varmuuskopio, joka salataan (AES-256) ennen tallennusta.</li>
     </ul>
   </section>
 
@@ -266,6 +275,11 @@
       Tietoja säilytetään asiakasyrityksen tilauksen voimassaolon ajan. Tilauksen päättyessä tiedot poistetaan tai
       luovutetaan asiakasyritykselle kohtuullisen ajan kuluessa, ellei toisin ole sovittu asiakassopimuksessa tai
       lain velvoittama säilytysaika (esim. kirjanpitolainsäädäntö laskutustietojen osalta) muuta edellytä.
+    </p>
+    <p>
+      Salatut varmuuskopiot poistuvat automaattisesti: päivittäiset 35 päivän ja kuukausittaiset 13 kuukauden
+      kuluttua. Poistetut tiedot voivat siis säilyä varmuuskopioissa enintään 13 kuukautta, minkä jälkeen ne
+      poistuvat kokonaan.
     </p>
   </section>
 
@@ -283,10 +297,39 @@
     </p>
   </section>
 
+  <section>
+    <h2>8. Korpnex Oy rekisterinpitäjänä</h2>
+    <p>
+      Korpnex Oy on itse rekisterinpitäjä niille tiedoille, joita se tarvitsee asiakassuhteen hoitamiseen.
+      Näitä ovat:
+    </p>
+    <ul>
+      <li><strong>Asiakasyrityksen yhteyshenkilön tiedot:</strong> pääkäyttäjän nimi ja sähköpostiosoite.</li>
+      <li><strong>Laskutustiedot:</strong> yrityksen nimi, laskutusosoite, ALV-tunnus, tilauksen tila ja
+        maksuhistoria. Maksukorttitietoja käsittelee vain Stripe, eivätkä ne tallennu Korpnexille.</li>
+      <li><strong>Palaute- ja tukiviestit:</strong> sovelluksen palautetoiminnolla tai sähköpostilla lähetetyt
+        viestit sekä lähettäjän nimi, yritys ja rooli.</li>
+    </ul>
+    <p>
+      <strong>Peruste:</strong> asiakassopimuksen täytäntöönpano, kirjanpitolain mukaiset velvoitteet sekä
+      oikeutettu etu palvelun kehittämiseen ja asiakastukeen.
+    </p>
+    <p>
+      <strong>Säilytys:</strong> yhteyshenkilön tiedot asiakassuhteen ajan. Laskutustietoja säilytetään
+      kirjanpitolain edellyttämän ajan, tositteita vähintään 6 vuotta. Palaute- ja tukiviestit säilytetään niin
+      kauan kuin ne ovat tarpeen asian hoitamiseksi.
+    </p>
+    <p>
+      Voit pyytää näiden tietojen tarkastamista, korjaamista tai poistamista ottamalla yhteyttä alla oleviin
+      yhteystietoihin. Sinulla on myös oikeus tehdä valitus valvontaviranomaiselle eli
+      <a href="https://tietosuoja.fi" target="_blank" rel="noopener">tietosuojavaltuutetun toimistolle</a>.
+    </p>
+  </section>
+
   <section class="contact-card">
     <h2>Yhteystiedot</h2>
     <p><strong>Korpnex Oy</strong> · Y-tunnus 3652969-4</p>
-    <p>Etelä-Pohjanmaa, Suomi</p>
+    <p>Kantoviita 7, Seinäjoki</p>
     <p>Sähköposti: <a href="mailto:niko.korpela@korpnex.fi">niko.korpela@korpnex.fi</a></p>
     <p>Puhelin: <a href="tel:+358453541188">045 354 1188</a></p>
   </section>
