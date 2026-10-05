@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Palvelut — Työturvallisuuskonsultointi ja sovelluskehitys | Korpnex</title>
-<meta name="description" content="Korpnexin palvelut Etelä-Pohjanmaalla: työturvallisuuskonsultointi (TR-/MVR-mittaukset, riskien arviointi), räätälöity sovelluskehitys rakennusalalle ja tilapäinen työnjohtoapu.">
-<link rel="canonical" href="https://korpnex.fi/palvelut.html">
+<title>Asiakasportaali — työturvallisuustarkastusten tulokset heti näkyviin | Korpnex</title>
+<meta name="description" content="Korpnexin työturvallisuusasiakkaiden asiakasportaali: turvallisuuskierrosten ja TR-/MVR-mittausten havainnot kuvineen heti näkyviin, puutteiden kuittaus puhelimella ja urakoitsijakohtaiset tilastot. Sisältyy palveluun.">
+<link rel="canonical" href="https://korpnex.fi/asiakasportaali.html">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Korpnex">
-<meta property="og:title" content="Palvelut — Työturvallisuuskonsultointi ja sovelluskehitys | Korpnex">
-<meta property="og:description" content="Työturvallisuuskonsultointi, räätälöity sovelluskehitys ja tilapäinen työnjohtoapu rakennustyömaille Etelä-Pohjanmaalla.">
-<meta property="og:url" content="https://korpnex.fi/palvelut.html">
+<meta property="og:title" content="Korpnexin asiakasportaali — tulokset heti, ei PDF-liitteitä">
+<meta property="og:description" content="Turvallisuuskierrosten havainnot kuvineen heti näkyviin, kuittaus puhelimella ja urakoitsijakohtaiset tilastot. Sisältyy Korpnexin työturvallisuuspalveluun.">
+<meta property="og:url" content="https://korpnex.fi/asiakasportaali.html">
+<meta property="og:image" content="https://korpnex.fi/img/tt-portaali.webp">
 <meta property="og:locale" content="fi_FI">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Palvelut — Työturvallisuuskonsultointi ja sovelluskehitys | Korpnex">
-<meta name="twitter:description" content="Työturvallisuuskonsultointi, räätälöity sovelluskehitys ja tilapäinen työnjohtoapu rakennustyömaille Etelä-Pohjanmaalla.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
 
   :root{
     --bg: #060D18;
@@ -305,6 +305,7 @@
   .svc-cat-head h2{ font-size:clamp(24px,3vw,32px); }
   .svc-badge{ display:inline-block; padding:5px 14px; border-radius:20px; font-size:12.5px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase; }
   .svc-badge.soon{ background:rgba(18,168,245,0.15); color:var(--accent-bright); border:1px solid rgba(18,168,245,0.35); }
+  .svc-badge.live{ background:rgba(34,197,94,0.15); color:#4ADE80; border:1px solid rgba(34,197,94,0.35); }
   .svc-cat-intro{ color:var(--text-2); font-size:15.5px; max-width:70ch; margin-bottom:30px; }
 
   .svc-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
@@ -451,28 +452,92 @@ form.contact-form input:hover,form.contact-form textarea:hover,form.contact-form
 footer{background:#040810}.footer-inner{opacity:.9}
 @media(max-width:700px){.hero{min-height:auto;padding-top:135px;padding-bottom:85px}.hero:after{width:90vw;height:90vw;right:-42%;top:18%;opacity:.5}.hero-mark{width:82%;right:-28%;opacity:.28}.hero h1{font-size:clamp(39px,11vw,56px)}.hero p.lead{font-size:17px}.service-card{min-height:0;padding:32px 26px}.final-cta:before{right:-12%;opacity:.7}}
 
+  .qc-gallery{ display:flex; flex-direction:column; gap:16px; margin-top:24px; }
+  .qc-gallery-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .qc-gallery-item{ cursor:pointer; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--card); position:relative; transition:transform .2s ease, border-color .2s ease; }
+  .qc-gallery-item:hover{ transform:translateY(-3px); border-color:rgba(75,174,255,.4); }
+  .qc-gallery-item.qc-gallery-wide{ height:420px; }
+  .qc-gallery-row .qc-gallery-item{ height:360px; }
+  .qc-gallery-item img{ display:block; width:100%; height:100%; object-fit:cover; object-position:top center; }
+  .qc-gallery-label{ position:absolute; bottom:0; left:0; right:0; background:linear-gradient(0deg, rgba(6,13,24,.88), transparent); color:#fff; font-size:13px; font-weight:600; padding:14px 12px 10px; text-align:center; }
+  @media(max-width:700px){ .qc-gallery-row{ grid-template-columns:1fr; } .qc-gallery-row .qc-gallery-item{ height:300px; } .qc-gallery-item.qc-gallery-wide{ height:220px; } }
+  .qc-lightbox{ display:none; position:fixed; inset:0; background:rgba(6,13,24,.94); z-index:500; align-items:center; justify-content:center; padding:40px; cursor:zoom-out; }
+  .qc-lightbox.open{ display:flex; }
+  .qc-lightbox img{ max-width:90%; max-height:90%; border-radius:10px; box-shadow:0 30px 80px rgba(0,0,0,.5); }
+  .qc-lightbox-close{ position:absolute; top:24px; right:32px; color:#fff; font-size:34px; font-weight:300; cursor:pointer; line-height:1; }
+
+/* ---------- Korpnex QC -tuotesivu ---------- */
+.qc-hero{padding:150px 0 90px;overflow:hidden;background:radial-gradient(circle at 78% 30%,rgba(8,120,232,.18),transparent 34%),linear-gradient(135deg,#050A12 0%,#07101D 52%,#061426 100%)}
+.qc-hero-inner{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.qc-hero h1{font-size:clamp(36px,5vw,60px);line-height:1.04;letter-spacing:-.04em;margin-bottom:22px}
+.qc-hero h1 .glow{background:linear-gradient(100deg,var(--accent),var(--accent-light));-webkit-background-clip:text;background-clip:text;color:transparent}
+.qc-hero .lead{font-size:18.5px;line-height:1.7;color:#A9B7C9;margin-bottom:34px;max-width:52ch}
+.qc-hero-visual{position:relative;padding-bottom:40px}
+.qc-browser{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#0b1626;box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 60px rgba(8,120,232,.12)}
+.qc-browser-bar{height:30px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#0d1a2b;border-bottom:1px solid var(--border)}
+.qc-browser-bar i{width:9px;height:9px;border-radius:50%;background:#26405e;display:block}
+.qc-browser-bar span{margin-left:10px;font-size:11.5px;color:var(--text-2)}
+.qc-browser img{display:block;width:100%;height:auto}
+.qc-phone{border-radius:28px;padding:7px;background:#0a0f1c;border:1px solid #22344d;box-shadow:0 25px 60px rgba(0,0,0,.5);overflow:hidden}
+.qc-phone img{display:block;width:100%;height:auto;border-radius:22px}
+.qc-phone-hero{position:absolute;right:-18px;bottom:-10px;width:30%;max-width:210px}
+.qc-section{padding:100px 0}
+.qc-alt{background:linear-gradient(180deg,#091321,#08111E)!important}
+.qc-pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.qc-pain{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px}
+.qc-pain strong{display:block;font:700 17px 'Plus Jakarta Sans',sans-serif;margin-bottom:8px}
+.qc-pain p{color:var(--text-2);font-size:14.5px;line-height:1.65}
+.qc-solution{margin-top:30px;padding:22px 26px;border:1px solid rgba(121,199,255,.25);border-radius:12px;background:radial-gradient(circle at 0% 0%,rgba(8,120,232,.16),transparent 60%),rgba(16,30,49,.55);font-size:16px;color:#c9d5e3;line-height:1.65}
+.qc-solution strong{color:#fff}
+.qc-steps{display:flex;flex-direction:column;gap:70px}
+.qc-step{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:center}
+.qc-step:nth-child(2){grid-template-columns:1fr 260px}
+.qc-step:nth-child(2) .qc-phone{order:2}
+.qc-step:nth-child(3){grid-template-columns:1.4fr 1fr}
+.qc-step .qc-phone{max-height:470px}
+.qc-step .qc-phone img{object-fit:cover;object-position:top;max-height:456px}
+.qc-shot-wide{border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.4)}
+.qc-shot-wide img{display:block;width:100%;height:auto}
+.qc-step-no{display:block;font:800 14px 'Plus Jakarta Sans',sans-serif;letter-spacing:.12em;color:var(--accent-light);margin-bottom:12px}
+.qc-step h3{font-size:clamp(22px,2.6vw,30px);letter-spacing:-.02em;margin-bottom:12px}
+.qc-step p{color:var(--text-2);font-size:16px;line-height:1.7;max-width:46ch}
+.qc-list{list-style:disc;padding-left:18px;color:var(--text-2);font-size:14.5px;line-height:1.8}
+.qc-price{max-width:460px;margin:0 auto;background:linear-gradient(160deg,rgba(18,38,63,.95),rgba(11,22,38,.95));border:1px solid rgba(121,199,255,.3);border-radius:18px;padding:34px;box-shadow:0 30px 80px rgba(0,0,0,.35),0 0 60px rgba(8,120,232,.12)}
+.qc-price-top{text-align:center;padding-bottom:22px;border-bottom:1px solid var(--border);margin-bottom:22px}
+.qc-price-name{font:700 13px 'Plus Jakarta Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-light)}
+.qc-price-amount{margin:10px 0 4px}
+.qc-price-amount b{font:800 54px 'Plus Jakarta Sans',sans-serif;letter-spacing:-.03em}
+.qc-price-amount span{color:var(--text-2);font-size:16px;margin-left:6px}
+.qc-price-top p{color:var(--text-2);font-size:14px}
+.qc-price-list{margin-bottom:26px}
+.qc-price-list li{padding:9px 0 9px 30px;position:relative;font-size:15px;color:#d6e0ec;border-bottom:1px solid rgba(29,48,72,.6)}
+.qc-price-list li:last-child{border-bottom:0}
+.qc-price-list li:before{content:"✓";position:absolute;left:4px;top:8px;color:#4ADE80;font-weight:800}
+.qc-price-btn{width:100%;justify-content:center}
+.qc-price-note{margin-top:14px;font-size:12.5px;color:var(--text-2);text-align:center;line-height:1.55}
+.qc-faq{max-width:820px}
+.qc-faq details{border-bottom:1px solid var(--border);padding:4px 0}
+.qc-faq summary{cursor:pointer;list-style:none;padding:18px 34px 18px 0;font:700 17px 'Plus Jakarta Sans',sans-serif;position:relative}
+.qc-faq summary::-webkit-details-marker{display:none}
+.qc-faq summary:after{content:"+";position:absolute;right:4px;top:14px;font-size:24px;color:var(--accent-light);transition:transform .2s}
+.qc-faq details[open] summary:after{transform:rotate(45deg)}
+.qc-faq details p{color:var(--text-2);font-size:15px;line-height:1.7;padding:0 0 18px;max-width:70ch}
+.qc-faq a{color:var(--accent-light)}
+@media(max-width:900px){
+  .qc-hero{padding:125px 0 70px}
+  .qc-hero-inner{grid-template-columns:1fr;gap:40px}
+  .qc-phone-hero{right:-6px;width:32%}
+  .qc-pain-grid{grid-template-columns:1fr}
+  .qc-step,.qc-step:nth-child(2),.qc-step:nth-child(3){grid-template-columns:1fr;gap:26px}
+  .qc-step:nth-child(2) .qc-phone{order:0}
+  .qc-step .qc-phone{max-width:260px}
+  .qc-section{padding:72px 0}
+}
+
+
   nav.main-nav a{white-space:nowrap}
   @media(max-width:1240px){nav.main-nav{gap:22px}}
-/* Korpnex QC -nosto etusivulla */
-.qc-teaser{margin-top:40px;display:grid;grid-template-columns:1fr 1.15fr;gap:36px;align-items:center;text-align:left;padding:34px;border:1px solid rgba(32,184,255,.35);border-radius:22px;background:linear-gradient(135deg,rgba(8,120,232,.16),rgba(16,30,49,.7) 55%);box-shadow:0 20px 60px rgba(0,0,0,.25)}
-.qc-teaser-top{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
-.qc-live{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;background:rgba(34,197,94,.14);border:1px solid rgba(34,197,94,.45);color:#86efac;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.qc-live i{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e}
-.qc-teaser h3{font-size:clamp(22px,2.6vw,30px);text-transform:uppercase;margin-bottom:14px}
-.qc-teaser p{color:var(--text-2);font-size:15px;line-height:1.7}
-.qc-teaser-list{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:9px}
-.qc-teaser-list li{position:relative;padding-left:26px;font-size:14.5px;color:var(--text)}
-.qc-teaser-list li:before{content:"✓";position:absolute;left:0;top:0;color:var(--accent-bright);font-weight:800}
-.qc-teaser-actions{display:flex;gap:12px;flex-wrap:wrap}
-.qc-teaser-img{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 18px 50px rgba(0,0,0,.4);transition:transform .3s ease}
-.qc-teaser-img:hover{transform:translateY(-3px)}
-.qc-teaser-img img{display:block;width:100%;height:auto}
-@media(max-width:900px){.qc-teaser{grid-template-columns:1fr;padding:24px;gap:24px}.qc-teaser-img{order:-1}}
-.tt-teaser{background:linear-gradient(135deg,rgba(34,197,94,.10),rgba(16,30,49,.7) 55%);border-color:rgba(34,197,94,.35)}
-.tt-teaser .qc-teaser-img{border-color:rgba(255,255,255,.08)}
 </style>
-
-
 </head>
 <body>
 
@@ -483,13 +548,12 @@ footer{background:#040810}.footer-inner{opacity:.9}
       <span>KORPNEX</span>
     </a>
     <nav class="main-nav">
-      <a href="palvelut.html" style="color:var(--text);">Palvelut</a>
+      <a href="palvelut.html">Palvelut</a>
       <a href="korpnex-qc.html">Korpnex QC</a>
       <a href="sovellukset.html">Sovellukset</a>
       <a href="index.html#miksi">Meistä</a>
-      <a href="index.html#tyoturvallisuus">Prosessi</a>
       <a href="kirjaudu.html">Kirjaudu</a>
-      <a href="index.html#yhteystiedot" class="cta">Ota yhteyttä</a>
+      <a href="index.html#yhteystiedot" class="cta">Pyydä tarjous</a>
     </nav>
     <button class="burger" id="burgerBtn" aria-label="Avaa valikko">☰</button>
   </div>
@@ -501,142 +565,229 @@ footer{background:#040810}.footer-inner{opacity:.9}
   <a href="korpnex-qc.html">Korpnex QC</a>
   <a href="sovellukset.html">Sovellukset</a>
   <a href="index.html#miksi">Meistä</a>
-  <a href="index.html#tyoturvallisuus">Prosessi</a>
   <a href="kirjaudu.html">Kirjaudu</a>
-  <a href="index.html#yhteystiedot" class="cta">Ota yhteyttä</a>
+  <a href="index.html#yhteystiedot" class="cta">Pyydä tarjous</a>
 </div>
 
 <main>
 
-  <section class="svc-hero">
-    <div class="wrap reveal">
-      <div class="eyebrow">Korpnex · Rakennusalan turvallisuus</div>
-      <h1>Palvelut</h1>
-      <p>Turvallisuuskonsultointia, työnjohdon tukea ja digitaalista seurantaa — rakennetaan kokonaisuus sen mukaan, mitä työmaasi oikeasti tarvitsee.</p>
-      <div class="hero-proof" style="margin-top:24px;"><span class="proof-pill"><i></i>Yksittäinen toimeksianto</span><span class="proof-pill"><i></i>Jatkuva yhteistyö</span><span class="proof-pill"><i></i>Työmaan tarpeen mukaan</span></div>
+  <!-- HERO -->
+  <section class="qc-hero">
+    <div class="wrap qc-hero-inner">
+      <div class="qc-hero-text reveal">
+        <div class="eyebrow">Asiakasportaali · Sisältyy työturvallisuuspalveluun</div>
+        <h1>Tarkastuksen tulokset <span class="glow">heti näkyviin.</span></h1>
+        <p class="lead">Kun teemme työmaallasi turvallisuuskierroksen tai TR-/MVR-mittauksen, havainnot kuvineen näkyvät asiakasportaalissa heti. Työnjohto kuittaa korjaukset puhelimella, ja me varmistamme ne seuraavalla käynnillä. Ei PDF-liitteitä, ei hukkuneita sähköposteja.</p>
+        <div class="hero-actions">
+          <a href="index.html#yhteystiedot" class="btn-primary">Pyydä tarjous →</a>
+          <a href="https://korpnex-tyoturvallisuus.netlify.app/" target="_blank" rel="noopener" class="btn-outline">Kirjaudu portaaliin</a>
+        </div>
+        <div class="hero-proof">
+          <span class="proof-pill"><i></i>Maksuton asiakkaillemme</span>
+          <span class="proof-pill"><i></i>Toimii puhelimen selaimessa</span>
+          <span class="proof-pill"><i></i>Tiedot tallennetaan EU:ssa</span>
+        </div>
+      </div>
+      <div class="qc-hero-visual reveal">
+        <div class="qc-browser">
+          <div class="qc-browser-bar"><i></i><i></i><i></i><span>Asiakasportaali</span></div>
+          <img src="img/tt-valvomo.webp" alt="Asiakasportaali: avoimet puutteet, TR-indeksi ja indeksin kehitys" width="1920" height="1140">
+        </div>
+        <div class="qc-phone qc-phone-hero">
+          <img src="img/tt-havainto.webp" alt="Havainto kuvineen asiakkaan puhelimessa" width="780" height="1688" loading="lazy">
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="svc-category">
+  <!-- ONGELMA -->
+  <section class="qc-section">
     <div class="wrap">
-      <div class="svc-cat-head reveal">
-        <h2>Työturvallisuuskonsultointi</h2>
+      <div class="section-head reveal">
+        <span class="tag">Tuttu tilanne?</span>
+        <h2>Tarkastusraportti hukkuu sähköpostiin</h2>
       </div>
-      <p class="svc-cat-intro reveal">Ydinpalvelumme. Käymme työmaan läpi, tunnistamme riskit ja puutteet, dokumentoimme havainnot ja seuraamme niiden korjaamista siihen asti, että asia on kunnossa.</p>
-      <div class="svc-grid reveal">
-        <div class="svc-card">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M8 40V16l9 7 9-7 9 7v3" stroke="var(--accent-light)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="40" x2="35" y2="40" stroke="var(--accent-light)" stroke-width="2.6" stroke-linecap="round"/><circle cx="31" cy="24" r="9" fill="var(--bg2)" stroke="var(--accent-bright)" stroke-width="3"/><line x1="37.3" y1="30.3" x2="43.5" y2="36.5" stroke="var(--accent-bright)" stroke-width="3.2" stroke-linecap="round"/></svg></div>
-          <h3>Työturvallisuuden kartoitukset</h3>
-          <p>Tunnistat työmaasi riskikohdat ennen kuin niistä syntyy tapaturmia tai yllättäviä seisokkeja — saat selkeän kuvan lähtötilanteesta heti yhteistyön alussa.</p>
+      <div class="qc-pain-grid reveal">
+        <div class="qc-pain">
+          <strong>Raportti tulee viiveellä</strong>
+          <p>Kierros tehdään maanantaina, PDF tulee keskiviikkona, ja siinä vaiheessa osa puutteista on jo unohtunut.</p>
         </div>
-        <div class="svc-card">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><rect x="10" y="8" width="24" height="32" rx="3" fill="none" stroke="var(--accent-light)" stroke-width="2.4"/><rect x="17" y="5" width="10" height="6" rx="2" fill="var(--accent-light)"/><line x1="15" y1="18" x2="29" y2="18" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round"/><line x1="15" y1="24" x2="29" y2="24" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round"/><line x1="15" y1="30" x2="24" y2="30" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round"/><circle cx="34" cy="32" r="9.5" fill="var(--accent-bright)"/><path d="M30 32l2.5 2.5L38 29" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Turvallisuuskierrokset</h3>
-          <p>Tunnistamme vaarat ennen kuin niistä syntyy tapaturmia, tuotantokatkoja tai ylimääräisiä kustannuksia. Teemme säännöllisiä TR-/MVR-kierroksia ja seuraamme havaintojen korjaamista, kunnes sovitut toimenpiteet on toteutettu.</p>
+        <div class="qc-pain">
+          <strong>"Onko tämä jo korjattu?"</strong>
+          <p>Korjauksista sovitaan puhelimessa, eikä jälkikäteen ole todistetta siitä, kuka korjasi ja milloin.</p>
         </div>
-        <div class="svc-card">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M21 8.5a3 3 0 0 1 5 0l14 24a3 3 0 0 1-2.6 4.5H9.6A3 3 0 0 1 7 32.5Z" fill="none" stroke="var(--accent-light)" stroke-width="2.4" stroke-linejoin="round"/><line x1="24" y1="19" x2="24" y2="27" stroke="var(--accent-light)" stroke-width="2.6" stroke-linecap="round"/><circle cx="24" cy="32" r="1.6" fill="var(--accent-light)"/><circle cx="35" cy="34" r="8" fill="var(--accent-bright)"/><circle cx="35" cy="34" r="2.6" fill="var(--bg2)"/><path d="M35 27.5v1.8M35 38.7V40.5M28.5 34h1.8M39.7 34h1.8M30.6 29.6l1.3 1.3M38.1 38.1l1.3 1.3M39.4 29.6l-1.3 1.3M31.9 38.1l-1.3 1.3" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <h3>Riskien arviointi</h3>
-          <p>Vältät ylimääräiset kustannukset ja viivästykset, kun riskit priorisoidaan oikein. Käymme läpi koko työmaan, emme vain yleisimpiä vaaroja.</p>
-        </div>
-        <div class="svc-card">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><rect x="22" y="10" width="18" height="13" rx="1.5" fill="none" stroke="var(--accent-light)" stroke-width="2.4"/><line x1="26" y1="15" x2="36" y2="15" stroke="var(--accent-light)" stroke-width="2" stroke-linecap="round"/><line x1="26" y1="19" x2="33" y2="19" stroke="var(--accent-light)" stroke-width="2" stroke-linecap="round"/><line x1="31" y1="23" x2="31" y2="27" stroke="var(--accent-light)" stroke-width="2.2"/><circle cx="13" cy="19" r="6" fill="var(--accent-bright)"/><path d="M7.5 17.5a5.5 5.5 0 0 1 11 0" fill="none" stroke="var(--bg2)" stroke-width="2.2" stroke-linecap="round"/><path d="M4.5 40c0-6.5 3.8-10.5 8.5-10.5s8.5 4 8.5 10.5" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round"/></svg></div>
-          <h3>Perehdytys ja koulutus</h3>
-          <p>Säästät työnjohdon aikaa, kun perehdytys ja sen materiaalit hoituvat valmiiksi — työmaalle tulevat tietävät heti, mitä turvallisuudelta odotetaan.</p>
-        </div>
-        <div class="svc-card">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M12 6h16l8 8v28a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" fill="none" stroke="var(--accent-light)" stroke-width="2.4" stroke-linejoin="round"/><path d="M28 6v8h8" fill="none" stroke="var(--accent-light)" stroke-width="2.4" stroke-linejoin="round"/><line x1="14" y1="24" x2="26" y2="24" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round"/><line x1="14" y1="30" x2="26" y2="30" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round"/><circle cx="33" cy="34" r="9" fill="var(--accent-bright)"/><path d="M29 34l2.7 2.7L38 30.5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Turvallisuuden dokumentointi</h3>
-          <p>Näet aina yhdellä silmäyksellä, mikä on korjattu ja mikä vielä avoinna — ei hajanaisia muistiinpanoja tai unohtuneita havaintoja.</p>
-        </div>
-        <div class="svc-card">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><line x1="8" y1="40" x2="40" y2="40" stroke="var(--accent-light)" stroke-width="2.4" stroke-linecap="round"/><rect x="11" y="30" width="6" height="10" rx="1.2" fill="var(--accent-light)"/><rect x="21" y="23" width="6" height="17" rx="1.2" fill="var(--accent-light)"/><rect x="31" y="14" width="6" height="26" rx="1.2" fill="var(--accent-bright)"/><path d="M13 22l8-7 6 5 12-13" fill="none" stroke="var(--accent-bright)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 7h9v9" fill="none" stroke="var(--accent-bright)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Turvallisuuden kehittäminen</h3>
-          <p>Turvallisuus paranee kierros kierrokselta eikä jää yksittäisten tarkastusten varaan — avoimet puutteet pysyvät näkyvissä, kunnes ne on korjattu.</p>
+        <div class="qc-pain">
+          <strong>Kokonaiskuva puuttuu</strong>
+          <p>Kymmenen kuukauden työmaalla on kymmeniä raportteja, eikä kukaan näe, mikä urakoitsija tai aihe toistuu.</p>
         </div>
       </div>
-      <div class="qc-teaser tt-teaser reveal" style="margin-top:36px;" id="asiakasportaali">
-        <div class="qc-teaser-text">
-          <div class="qc-teaser-top"><span class="qc-live"><i></i>Sisältyy työturvallisuuspalveluun</span><span class="eyebrow" style="margin:0;">Asiakasportaali</span></div>
-          <h3>Tulokset heti. Ei PDF-liitteitä.</h3>
-          <p>Kun teemme työmaallasi turvallisuuskierroksen tai TR-/MVR-mittauksen, havainnot kuvineen näkyvät asiakasportaalissa heti. Työnjohto kuittaa korjaukset puhelimella, ja varmistamme ne seuraavalla käynnillä.</p>
-          <ul class="qc-teaser-list">
-            <li>Havainnot kuvineen, määräaikoineen ja korjaushistorioineen</li>
-            <li>Kuittaus korjatuksi puhelimella — kuvan voi ottaa suoraan</li>
-            <li>Urakoitsijakohtaiset tilastot ja turvallisuusindeksin kehitys</li>
-            <li>Loppuraportti ja Excel-vienti työmaan päättyessä</li>
-            <li>Maksuton Korpnexin työturvallisuusasiakkaille</li>
-          </ul>
-          <div class="qc-teaser-actions">
-            <a href="asiakasportaali.html" class="btn-primary">Näin portaali toimii →</a>
-            <a href="https://korpnex-tyoturvallisuus.netlify.app/" target="_blank" rel="noopener" class="btn-outline">Kirjaudu portaaliin</a>
+      <p class="qc-solution reveal"><strong>Asiakasportaali kokoaa kaiken yhteen:</strong> jokainen havainto kuvineen, vastuuyritys, määräaika ja korjaushistoria, koko työmaan ajalta. Sinä ja työnjohtosi näette saman tilanteen kuin me.</p>
+    </div>
+  </section>
+
+  <!-- MITEN TOIMII -->
+  <section class="qc-section qc-alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Näin se toimii</span>
+        <h2>Havainnosta varmistettuun korjaukseen</h2>
+      </div>
+      <div class="qc-steps">
+        <div class="qc-step reveal">
+          <div class="qc-phone"><img src="img/tt-kentta.webp" alt="Korpnex kirjaa havainnon työmaalla" width="780" height="1688" loading="lazy"></div>
+          <div class="qc-step-text">
+            <span class="qc-step-no">01</span>
+            <h3>Me kirjaamme havainnot työmaalla</h3>
+            <p>Turvallisuuskierroksella jokainen poikkeama kirjataan kuvan, vakavuuden, vastuuyrityksen ja määräajan kanssa. TR-/MVR-mittaus tehdään samalla. Kun kierros on valmis, työnjohtosi saa sähköpostiin yhteenvedon.</p>
           </div>
         </div>
-        <a href="asiakasportaali.html" class="qc-teaser-img" aria-label="Lue lisää asiakasportaalista">
-          <img src="img/tt-portaali.webp" alt="Korpnexin asiakasportaali: työmaan avoimet puutteet, TR-indeksi ja havainnon kuittaus puhelimella" width="1800" height="1060" loading="lazy">
-        </a>
+        <div class="qc-step reveal">
+          <div class="qc-phone"><img src="img/tt-kuittaus.webp" alt="Työnjohtaja kuittaa korjauksen puhelimella" width="780" height="1688" loading="lazy"></div>
+          <div class="qc-step-text">
+            <span class="qc-step-no">02</span>
+            <h3>Työnjohto kuittaa korjauksen puhelimella</h3>
+            <p>Kun puute on korjattu, työnjohtaja kuittaa sen portaalissa ja voi ottaa kuvan suoraan puhelimella. Saamme kuittauksesta heti ilmoituksen.</p>
+          </div>
+        </div>
+        <div class="qc-step reveal">
+          <div class="qc-shot-wide"><img src="img/tt-valvomo.webp" alt="Portaalin yhteenveto työmaasta" width="1920" height="1140" loading="lazy"></div>
+          <div class="qc-step-text">
+            <span class="qc-step-no">03</span>
+            <h3>Me varmistamme korjauksen</h3>
+            <p>Seuraavalla käynnillä tarkistamme kuitatut kohdat ja merkitsemme ne varmistetuiksi jälkikuvalla. Jokaisesta puutteesta jää aukoton historia: kuka merkitsi, kuka korjasi ja kuka varmisti, milloin.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="svc-category" style="padding-top:0;background:var(--bg);border-top:0;">
+  <!-- KOKONAISKUVA -->
+  <section class="qc-section">
     <div class="wrap">
-      <div class="svc-cta-note reveal"><div><strong>Et tiedä vielä, mikä palvelu sopii?</strong><br><span style="color:var(--text-2);font-size:14px;">Ei tarvitsekaan. Kerro työmaasta ja tarpeesta, niin mietitään sopiva kokonaisuus yhdessä.</span></div><a href="index.html#yhteystiedot" class="btn-primary">Kysy Korpnexilta →</a></div>
-    </div>
-  </section>
-
-  <section class="svc-category">
-    <div class="wrap">
-      <div class="svc-cat-head reveal">
-        <h2>Sovelluskehitys rakennusalalle</h2>
+      <div class="section-head reveal">
+        <span class="tag">Koko työmaan kuva</span>
+        <h2>Näet, mikä toistuu ja kenellä</h2>
       </div>
-      <p class="svc-cat-intro reveal">Onko yrityksesi prosessi vielä Excelillä, WhatsAppilla tai monen eri järjestelmän varassa? Rakennamme siihen sopivan digitaalisen työkalun.</p>
-      <div class="svc-single reveal">
-        <h3>Sovellus juuri sinun tarpeeseesi</h3>
-        <p>Kaikkea ei tarvitse sovittaa valmiin ohjelmiston ympärille. Rakennamme työkaluja yrityksen oman toimintatavan mukaan — esimerkiksi tuntikirjaukseen, urakoiden seurantaan, laadunhallintaan tai työmaan dokumentointiin. Rakennusalan tuntemus auttaa meitä rakentamaan ratkaisuja, jotka toimivat myös käytännössä työmaalla.</p>
-        <a href="index.html#yhteystiedot" class="btn-primary" style="display:inline-flex;">Pyydä tarjous sovelluksen kehittämisestä →</a>
+      <div class="qc-step reveal" style="margin-bottom:34px;">
+        <div class="qc-shot-wide"><img src="img/tt-urakoitsijat.webp" alt="Havainnot viikoittain ja urakoitsijoittain" width="1920" height="1140" loading="lazy"></div>
+        <div class="qc-step-text">
+          <h3>Urakoitsijakohtaiset tilastot</h3>
+          <p>Havainnot viikoittain, kriittiset ja avoimet puutteet, keskimääräinen korjausaika ja yleisin aihe jokaiselle urakoitsijalle. Avaa urakoitsijan rivi, niin näet sen havainnot kuvineen. Kätevä viikkopalaverissa.</p>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <section class="svc-category">
-    <div class="wrap">
-      <div class="svc-cat-head reveal">
-        <h2>Työnjohto</h2>
-      </div>
-      <p class="svc-cat-intro reveal">Tilapäistä työnjohtoapua rakennustyömaille, kun tarvitset lisäresurssia.</p>
-      <div class="svc-single reveal">
-        <h3>Työnjohtoapua tilapäiseen tarpeeseen</h3>
-        <p>Tarjoamme lyhytkestoista tai tilapäistä työnjohtoapua rakennustyömaille esimerkiksi sijaisuuksiin, tilapäiseen resurssitarpeeseen tai yksittäisten työvaiheiden johtamiseen.</p>
-        <ul>
-          <li>Aliurakoitsijoiden ohjaus ja viikkosuunnittelu</li>
-          <li>Työmaan laadunvalvonta ja asennustyön tarkistaminen</li>
-          <li>Aikataulutus ja raportointi</li>
-        </ul>
-        <a href="index.html#yhteystiedot" class="more">Pyydä tarjous →</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="svc-category" id="ukk">
-    <div class="wrap">
-      <div class="section-head reveal"><span class="tag">Usein kysyttyä</span><h2>Helppo aloittaa. Helppo ymmärtää.</h2></div>
       <div class="svc-grid reveal">
-        <div class="svc-card"><h3>Voiko Korpnex tulla mukaan vain yhteen toimeksiantoon?</h3><p>Kyllä. Palvelu voidaan toteuttaa yksittäisenä kartoituksena tai osana pidempää yhteistyötä.</p></div>
-        <div class="svc-card"><h3>Tarvitsemmeko valmiiksi tiedon siitä, mitä tarvitsemme?</h3><p>Ette. Tarpeen voi käydä läpi yhdessä, ja ratkaisu voidaan mitoittaa työmaan tilanteen mukaan.</p></div>
-        <div class="svc-card"><h3>Maksaako asiakasportaali erikseen?</h3><p>Ei. Asiakasportaali sisältyy työturvallisuuspalveluihimme. Saat tunnukset koko työnjohdolle, ja ne ovat käytössä yhteistyön ajan.</p></div>
-        <div class="svc-card"><h3>Onko Korpnex vain tarkastaja?</h3><p>Ei. Toimintatavan ydin on yhteistyö: havainnot tunnistetaan, ratkaisuja mietitään yhdessä ja sovittujen asioiden etenemistä seurataan.</p></div>
+        <div class="svc-card">
+          <h3>Havainnot</h3>
+          <ul class="qc-list">
+            <li>Kuvat, vakavuus, luokka ja vastuuyritys</li>
+            <li>Määräajat ja myöhästymisvaroitus</li>
+            <li>Suodatus: avoimet, odottaa, korjatut</li>
+            <li>Ennen- ja jälkeen-kuvat rinnakkain</li>
+          </ul>
+        </div>
+        <div class="svc-card">
+          <h3>Mittaukset</h3>
+          <ul class="qc-list">
+            <li>TR- ja MVR-mittausten koko historia</li>
+            <li>Tulokset havaintoluokittain</li>
+            <li>Turvallisuusindeksin kehitys kuvaajana</li>
+            <li>Kirjatut puutteet ja niiden tila</li>
+          </ul>
+        </div>
+        <div class="svc-card">
+          <h3>Raportit</h3>
+          <ul class="qc-list">
+            <li>PDF-raportti kuvineen milloin tahansa</li>
+            <li>Loppuraportti, kun työmaa päättyy</li>
+            <li>Excel-vienti kaikista havainnoista</li>
+            <li>Sähköposti jokaisesta tarkastuksesta</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- HINTA -->
+  <section class="qc-section qc-alt" id="hinta">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <span class="tag">Hinta</span>
+        <h2>Sisältyy palveluun</h2>
+      </div>
+      <div class="qc-price reveal">
+        <div class="qc-price-top">
+          <span class="qc-price-name">Asiakasportaali</span>
+          <div class="qc-price-amount"><b>0 €</b><span>erillistä maksua</span></div>
+          <p>kun käytät Korpnexin työturvallisuuspalveluita</p>
+        </div>
+        <ul class="qc-price-list">
+          <li>Tunnukset koko työnjohdolle</li>
+          <li>Kaikki työmaat, joilla teemme tarkastuksia</li>
+          <li>Kuvat, mittaukset, tilastot ja raportit</li>
+          <li>Käytössä 3 kk viimeisen tarkastuksen jälkeen</li>
+          <li>Ei sovelluskaupasta ladattavaa</li>
+        </ul>
+        <a href="index.html#yhteystiedot" class="btn-primary qc-price-btn">Pyydä tarjous →</a>
+        <p class="qc-price-note">Turvallisuuskierrokset ja TR-/MVR-mittaukset hinnoitellaan työmaan koon ja tarkastusvälin mukaan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KÄYTTÖÖNOTTO -->
+  <section class="qc-section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Käyttöönotto</span>
+        <h2>Valmiina ensimmäiseen kierrokseen</h2>
+      </div>
+      <div class="decision-grid reveal" style="border-radius:12px;">
+        <div><span>01</span><strong>Sovitaan yhteistyöstä</strong><p>Käydään läpi työmaa, tarkastusväli ja kuka työnjohdostasi tarvitsee tunnukset.</p></div>
+        <div><span>02</span><strong>Tunnukset sähköpostiin</strong><p>Kutsumme käyttäjät. Jokainen asettaa oman salasanansa sähköpostin linkistä.</p></div>
+        <div><span>03</span><strong>Ensimmäinen kierros</strong><p>Tulokset näkyvät portaalissa heti kierroksen jälkeen. Puhelimessa portaalin voi lisätä kotinäytölle.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UKK -->
+  <section class="qc-section qc-alt" id="ukk">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Usein kysyttyä</span>
+        <h2>Kysymyksiä ja vastauksia</h2>
+      </div>
+      <div class="qc-faq reveal">
+        <details open>
+          <summary>Maksaako portaali erikseen?</summary>
+          <p>Ei. Asiakasportaali sisältyy työturvallisuuspalveluihimme. Maksat vain tarkastuksista ja mittauksista.</p>
+        </details>
+        <details>
+          <summary>Kuka portaalia käyttää?</summary>
+          <p>Työnjohto, työmaapäällikkö ja muut, joille haluat näkyvyyden. Jokainen näkee vain oman yrityksensä työmaat.</p>
+        </details>
+        <details>
+          <summary>Saako PDF-raportin edelleen?</summary>
+          <p>Saa. Portaalista voi ladata PDF-raportin kuvineen milloin tahansa, ja työmaan päättyessä koko työmaan loppuraportin sekä Excel-tiedoston.</p>
+        </details>
+        <details>
+          <summary>Korvaako portaali työmaan omat velvoitteet?</summary>
+          <p>Ei. Portaali on tiedotus- ja dokumentointiväline. Työnantajan ja päätoteuttajan lakisääteiset työturvallisuusvelvoitteet säilyvät ennallaan, mutta portaalin avulla niiden hoitaminen on helppo todentaa.</p>
+        </details>
+        <details>
+          <summary>Missä tiedot säilytetään ja kuinka kauan?</summary>
+          <p>Tiedot ja kuvat tallennetaan EU:ssa sijaitseville palvelimille, ja jokaisen asiakkaan tiedot on eroteltu toisistaan. Työmaan tiedot säilytetään 3 vuotta työmaan päättymisestä. Lisätietoa <a href="korpnex-tyoturvallisuus-tietosuoja.html">tietosuojaselosteessa</a> ja <a href="korpnex-tyoturvallisuus-kayttoehdot.html">käyttöehdoissa</a>.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOPPU-CTA -->
   <section class="final-cta">
     <div class="wrap reveal">
-      <h2>Sopiiko jokin palveluistamme tarpeeseesi?</h2>
-      <p>Kerro meille tilanteestasi, niin katsotaan yhdessä sopivin ratkaisu.</p>
+      <h2>Turvallisuus ei pääty tarkastukseen</h2>
+      <p>Kerro työmaastasi, niin sovitaan tarkastusväli ja otetaan portaali käyttöön jo ensimmäiseltä kierrokselta.</p>
       <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
         <a href="index.html#yhteystiedot" class="btn-primary">Pyydä tarjous →</a>
-        <a href="index.html" class="btn-outline">← Takaisin etusivulle</a>
+        <a href="palvelut.html" class="btn-outline">Katso palvelut</a>
       </div>
     </div>
   </section>
@@ -654,39 +805,30 @@ footer{background:#040810}.footer-inner{opacity:.9}
       <a href="palvelut.html">Palvelut</a>
       <a href="korpnex-qc.html">Korpnex QC</a>
       <a href="sovellukset.html">Sovellukset</a>
-      <a href="index.html#miksi">Meistä</a>
       <a href="index.html#yhteystiedot">Yhteystiedot</a>
       <a href="https://www.linkedin.com/in/niko-korpela-80287a2b0/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.instagram.com/korpnex/" target="_blank" rel="noopener">Instagram</a>
-      <a href="index.html#tietosuojaseloste">Tietosuojaseloste</a>
       <a href="korpnex-qc-tietosuoja.html">Korpnex QC -tietosuoja</a>
       <a href="korpnex-qc-kayttoehdot.html">Korpnex QC -tilausehdot</a>
+      <a href="korpnex-tyoturvallisuus-tietosuoja.html">Asiakasportaalin tietosuoja</a>
     </div>
   </div>
 </footer>
 
 <script>
-  // header scroll state
   const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive:true });
-
-  // mobile nav
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 40); }, { passive:true });
   const burger = document.getElementById('burgerBtn');
   const mobileNav = document.getElementById('mobileNav');
   const mobileClose = document.getElementById('mobileClose');
   burger.addEventListener('click', () => mobileNav.classList.add('open'));
   mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
   mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
-
-  // reveal on scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold:0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
-
 
 </body>
 </html>
