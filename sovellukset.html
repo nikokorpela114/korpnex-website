@@ -647,7 +647,7 @@ footer{background:#040810}.footer-inner{opacity:.9}
 
   <section class="svc-category" style="padding-top:0;background:var(--bg);border-top:0;">
     <div class="wrap">
-      <div class="svc-cta-note reveal"><div><strong>Onko yritykselläsi prosessi, joka pitäisi saada toimimaan digitaalisesti?</strong><br><span style="color:var(--text-2);font-size:14px;">Kerro meille tarpeesta. Suunnitellaan yhdessä ratkaisu, joka sopii juuri sinun toimintatapaan.</span></div><a href="index.html#yhteystiedot" class="btn-primary">Kysy Korpnexilta →</a></div>
+      <div class="svc-cta-note reveal"><div><strong>Onko yritykselläsi prosessi, joka pitäisi saada toimimaan digitaalisesti?</strong><br><span style="color:var(--text-2);font-size:14px;">Kerro meille tarpeesta. Suunnitellaan yhdessä ratkaisu, joka sopii juuri sinun toimintatapaasi.</span></div><a href="index.html#yhteystiedot" class="btn-primary">Kysy Korpnexilta →</a></div>
     </div>
   </section>
 
@@ -717,13 +717,16 @@ footer{background:#040810}.footer-inner{opacity:.9}
 </div>
 
 <script>
+  const qcAlts = { valvomo: "Korpnex QC: Valvomo-näkymä", tyonjohto: "Korpnex QC: Työnjohdon näkymä", asentaja: "Korpnex QC: Asentajan näkymä" };
   const qcImages = {
     valvomo: "img/qc-valvomo.webp",
     tyonjohto: "img/qc-tyonjohto.webp",
     asentaja: "img/qc-asentaja.webp"
   };
   function openLightbox(key){
-    document.getElementById('qcLightboxImg').src = qcImages[key];
+    const img = document.getElementById('qcLightboxImg');
+    img.src = qcImages[key];
+    img.alt = qcAlts[key] || '';
     document.getElementById('qcLightbox').classList.add('open');
   }
   function closeLightbox(){
