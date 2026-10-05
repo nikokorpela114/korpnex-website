@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kirjaudu — Korpnex QC</title>
 <meta name="robots" content="noindex">
-<meta name="description" content="Kirjaudu Korpnex QC -sovellukseen: Asentaja, Työnjohto tai Valvomo.">
+<meta name="description" content="Kirjaudu Korpnexin sovelluksiin: Korpnex QC (asentaja, työnjohto, valvomo) ja Korpnex Työturvallisuus -asiakasportaali.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
@@ -541,6 +541,8 @@ footer{background:#040810}.footer-inner{opacity:.9}
   .app-txt strong{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800}
   .app-txt span{display:block;color:var(--text-2);font-size:14px;margin-top:3px;line-height:1.45}
   .app-arrow{margin-left:auto;font-size:22px;color:var(--accent-bright)}
+  .app-group{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin:34px 0 -18px;color:var(--text)}
+  .app-group span{color:var(--text-2);font-weight:600;text-transform:none;letter-spacing:0;margin-left:6px}
   .help-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
   .help-card{padding:20px 22px;border-radius:16px;border:1px solid var(--border);background:rgba(16,30,49,.5)}
   .help-card h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:800;margin-bottom:8px;text-transform:none}
@@ -585,10 +587,11 @@ footer{background:#040810}.footer-inner{opacity:.9}
 <main>
   <div class="wrap">
     <div class="login-wrap">
-      <div class="eyebrow">Korpnex QC · Kirjaudu</div>
+      <div class="eyebrow">Korpnex · Kirjaudu</div>
       <h1>Kirjaudu sovellukseen</h1>
-      <p class="sub">Valitse oma roolisi. Kirjaudu tunnuksilla, jotka sait yrityksesi pääkäyttäjältä sähköpostilla tai viestillä.</p>
+      <p class="sub">Valitse sovellus ja oma roolisi. Kirjaudu tunnuksilla, jotka sait sähköpostilla.</p>
 
+      <h2 class="app-group">Korpnex QC <span>laadunvalvonta</span></h2>
       <div class="app-grid">
         <a class="app-btn" href="https://korpnex-qc.netlify.app/asentaja/">
           <div class="app-ico" aria-hidden="true">👷</div>
@@ -607,10 +610,20 @@ footer{background:#040810}.footer-inner{opacity:.9}
         </a>
       </div>
 
+      <h2 class="app-group" id="tyoturvallisuus">Korpnex Työturvallisuus <span>asiakasportaali</span></h2>
+      <div class="app-grid">
+        <a class="app-btn" href="https://korpnex-tyoturvallisuus.netlify.app/">
+          <div class="app-ico" aria-hidden="true">🦺</div>
+          <div class="app-txt"><strong>Asiakasportaali</strong><span>Työmaidesi turvallisuushavainnot, TR-/MVR-mittaukset ja puutteiden kuittaus</span></div>
+          <div class="app-arrow" aria-hidden="true">→</div>
+        </a>
+      </div>
+
       <div class="help-grid">
         <div class="help-card">
           <h2>Etkö saanut tunnuksia?</h2>
-          <p>Pyydä ne yrityksesi pääkäyttäjältä. Hän näkee tunnuksesi Valvomosta ja voi lähettää ne uudelleen sähköpostilla tai viestillä.</p>
+          <p><strong>Korpnex QC:</strong> pyydä ne yrityksesi pääkäyttäjältä. Hän näkee tunnuksesi Valvomosta ja voi lähettää ne uudelleen.</p>
+          <p style="margin-top:10px"><strong>Asiakasportaali:</strong> tunnukset lähettää Korpnex. Ota yhteyttä, jos et ole saanut niitä.</p>
           <p style="margin-top:10px">Salasanan voi vaihtaa kirjautumissivun kohdasta <em>Unohtuiko salasana?</em></p>
         </div>
         <div class="help-card">
